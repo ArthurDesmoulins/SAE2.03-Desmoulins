@@ -5,3 +5,8 @@
 @import "./utilities.css" layer(utilities);
 
 @import "../component/NavBar/style.css" layer(components);
+@import "../component/FilmCard/style.css" layer(components);
+
+body{
+    background-color: rgb(46, 32, 59);
+}

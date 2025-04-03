@@ -17,3 +17,13 @@ define("HOST", "localhost");
 define("DBNAME", "desmoulins9");
 define("DBLOGIN", "desmoulins9");
 define("DBPWD", "desmoulins9");
+
+
+function getAllMovies(){
+    $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD);
+    $sql = "select * from Movie";
+    $stmt = $cnx->prepare($sql);
+    $stmt -> execute();
+    $res = $stmt->fetchAll(PDO::FETCH_OBJ);
+    return $res;
+}

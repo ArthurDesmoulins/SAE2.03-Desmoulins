@@ -1,8 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+body{
+    background-color: rgb(46, 32, 59);
+}
+
+.GridCard{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 9rem);
+    gap: 1rem;
+}
+
+.GridCard{
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: repeat(auto-fill, 9rem);
+    padding-left: 1.5rem;
+    height: 13rem;
+    gap: 1rem;
+    overflow-x: scroll;
+}
+
+.GridCard::-webkit-scrollbar-track {
+    background: rgb(46, 32, 59);
+    border-radius: 10px;
+}
+
+.GridCard::-webkit-scrollbar-thumb {
+    background: rgb(72, 57, 87);
+    border-radius: 10px;
+}
+
+.GridCard::-webkit-scrollbar {
+    height: 8px; 
+}
+
 figure{
     margin:0;
 }
+
+.GridCard{
+    display: grid;
+}
+
 
 .FilmCard{
     width: 9rem;
@@ -16,17 +55,23 @@ figure{
 
 .FilmCard__img{
     margin: 0;
-    margin-bottom: -3.5rem;
+    margin-bottom: -5rem;
     width: 9rem;
     height: 12rem;
     z-index: 5;
     border-radius: 0.3rem;
 }
 
+.FilmCard__img:active{
+    filter: grayscale(1) brightness(0.5);;
+    transition: filter 0.15s ease-in-out;
+}
+
 .FilmCard__caption{
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     position: relative;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
@@ -47,6 +92,30 @@ figure{
 }
 
 @media screen and (min-width: 31rem){
+    .GridCard{
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: repeat(auto-fill, 12rem);
+        padding-left: 1.5rem;
+        height: 17.5rem;
+        gap: 1rem;
+        overflow-x: scroll;
+    }
+
+    .GridCard::-webkit-scrollbar-track {
+        background: rgb(46, 32, 59);
+        border-radius: 10px;
+    }
+
+    .GridCard::-webkit-scrollbar-thumb {
+        background: rgb(72, 57, 87);
+        border-radius: 10px;
+    }
+
+    .GridCard::-webkit-scrollbar {
+        height: 8px; 
+    }
+
     .FilmCard{
         width: 12rem;
         font-family: Inter;
@@ -56,16 +125,27 @@ figure{
     .FilmCard__figure{
         position: relative;
     }
-    
+
     .FilmCard__img{
         margin: 0;
-        margin-bottom: -4.2rem;
+        margin-bottom: -7rem;
         width: 12rem;
         height: 16rem;
         z-index: 5;
         border-radius: 0.3rem;
     }
     
+    .FilmCard__img:hover{
+        border: solid rgba(255, 255, 255, 1);
+        filter: grayscale(1) brightness(0.5);;
+        transition: filter 0.15s ease-in-out;
+    }
+    
+    .FilmCard:hover .FilmCard__caption {
+        color: white;
+        transition: 0.2s ease-in-out;
+    }
+
     .FilmCard__caption{
         display: flex;
         flex-direction: column;
@@ -75,9 +155,11 @@ figure{
         margin-right: 0.5rem;
         z-index: 10;
         border-radius: 0.1rem;
-        background-color: rgba(68, 68, 68, 0.6);
+        background-color: transparent;
+        color: transparent; 
     }
-    
+
+
     .FilmCard__title{
         margin: 0;
         font-size: 2rem;

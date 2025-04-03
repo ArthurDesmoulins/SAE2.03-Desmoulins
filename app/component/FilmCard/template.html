@@ -1,24 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../FilmCard/style.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="FilmCard">
-      <figure class="FilmCard__figure">
-        <img
-          class="FilmCard__img"
-          src="../images/interstellar.jpg"
-          alt="rien"
-        />
-      </figure>
-      <figcaption class="FilmCard__caption">
-        <h2 class="FilmCard__title">Interstellar</h2>
-        <p class="FilmCard__type">Movie</p>
-      </figcaption>
-    </div>
-  </body>
-</html>
+<div class="FilmCard">
+  <figure class="FilmCard__figure">
+    <img class="FilmCard__img" src="../server/images/{{img}}" alt="rien" />
+  </figure>
+  <figcaption class="FilmCard__caption">
+    <h2 class="FilmCard__title">{{titre}}</h2>
+  </figcaption>
+</div>

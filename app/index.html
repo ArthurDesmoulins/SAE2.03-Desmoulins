@@ -10,10 +10,14 @@
   <body>
     <header id="header"></header>
 
-    <section id="content"></section>
+    <section id="content">
+      <div class="GridCard"></div>
+    </section>
 
     <script type="module">
       import { NavBar } from "./component/NavBar/script.js";
+      import { FilmCard } from "./component/FilmCard/script.js";
+      import { DataMovie } from "./data/dataMovie.js";
 
       // Controleur
       // Rappel, écrire window.C plutôt que let C est nécessaire pour tester depuis la console du navigateur
@@ -28,8 +32,16 @@
 
       C.start = function () {
         V.renderNavBar("C.handlerAbout()");
+        C.getMovies();
       };
 
+      C.getMovies = async function () {
+        let data = await DataMovie.request();
+        if (data.length == 0) {
+          data = { name: "aucun film pour le moment" };
+        }
+        V.renderFilmCard(data);
+      };
       // Vue (contient tout ce qui est relatif à l'affichage)
       window.V = {};
 
@@ -43,6 +55,10 @@
       V.renderNavBar = function (hAbout) {
         let header = document.querySelector("#header");
         header.innerHTML = NavBar.format(hAbout);
+      };
+      V.renderFilmCard = function (data) {
+        let header = document.querySelector(".GridCard");
+        header.innerHTML = FilmCard.formatMany(data);
       };
 
       C.start(); // Démarre l'application
