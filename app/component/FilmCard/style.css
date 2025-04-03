@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+figure{
+    margin:0;
+}
+
+.FilmCard{
+    width: 9rem;
+    font-family: Inter;
+    color: rgb(255, 255, 255);
+}
+
+.FilmCard__figure{
+    position: relative;
+}
+
+.FilmCard__img{
+    margin: 0;
+    margin-bottom: -3.5rem;
+    width: 9rem;
+    height: 12rem;
+    z-index: 5;
+}
+
+.FilmCard__caption{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    z-index: 10;
+    border-radius: 0.1rem;
+    background-color: rgba(68, 68, 68, 0.6);
+}
+
+.FilmCard__title{
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.FilmCard__type{
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+@media screen and (min-width: 31rem){
+    .FilmCard{
+        width: 12rem;
+        font-family: Inter;
+        color: rgb(255, 255, 255);
+    }
+    
+    .FilmCard__figure{
+        position: relative;
+    }
+    
+    .FilmCard__img{
+        margin: 0;
+        margin-bottom: -4.2rem;
+        width: 12rem;
+        height: 16rem;
+        z-index: 5;
+    }
+    
+    .FilmCard__caption{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        z-index: 10;
+        border-radius: 0.1rem;
+        background-color: rgba(68, 68, 68, 0.6);
+    }
+    
+    .FilmCard__title{
+        margin: 0;
+        font-size: 2rem;
+    }
+    
+    .FilmCard__type{
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 200;
+    }
+}
