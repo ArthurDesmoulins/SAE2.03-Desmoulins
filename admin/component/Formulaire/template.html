@@ -1,9 +1,15 @@
-<div class="formulaire">
+<form class="formulaire">
   <h2>Info</h2>
   <div class="formulaire__info">
     <div class="label__input">
       <label for="titre">Titre</label>
-      <input name="name" type="text" id="titre" class="formulaire_info-titre" />
+      <input
+        name="name"
+        type="text"
+        id="titre"
+        class="formulaire_info-titre"
+        required
+      />
     </div>
     <div class="label__input">
       <label for="genre">Genre</label>
@@ -12,6 +18,7 @@
         type="text"
         id="genre"
         class="formulaire__info-genre"
+        required
       />
     </div>
     <div class="label__input">
@@ -25,6 +32,7 @@
         type="text"
         id="real"
         class="formulaire__info-real"
+        required
       />
     </div>
     <div class="label__input">
@@ -34,6 +42,7 @@
         type="number"
         id="duree"
         class="formulaire_info-duree"
+        required
       />
     </div>
     <div class="label__input">
@@ -43,6 +52,8 @@
         type="number"
         id="age"
         class="formulaire_info-age"
+        min="3"
+        max="21"
       />
     </div>
     <div class="label__input">
@@ -60,11 +71,11 @@
   <div class="formulaire__fichier">
     <div class="label__input2">
       <label for="desc">Url de l'image</label>
-      <input name="image" class="formulaire_fichier-affiche" />
+      <input name="image" class="formulaire_fichier-affiche" required />
     </div>
     <div class="label__input2">
       <label for="desc">Url du trailer</label>
-      <input name="trailer" class="formulaire_fichier-url-trailer" />
+      <input name="trailer" class="formulaire_fichier-url-trailer" required />
     </div>
   </div>
   <input
@@ -74,4 +85,4 @@
     value="Ajouter le film"
     name="todo"
   />
-</div>
+</form>
