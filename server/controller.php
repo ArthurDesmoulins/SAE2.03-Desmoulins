@@ -28,7 +28,7 @@ function readMoviesController(){
 function addMovieController(){
     $name = $_REQUEST['name'];
     $year = $_REQUEST['year'];
-    $lenght = $_REQUEST['lenght'];
+    $length = $_REQUEST['length'];
     $description = $_REQUEST['description'];
     $director = $_REQUEST['director'];
     $id_categorie = $_REQUEST['id_categorie'];

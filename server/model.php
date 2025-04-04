@@ -30,12 +30,12 @@ function getAllMovies(){
 
 function addMovie($n, $y, $l, $d1, $d2, $idc, $i, $t, $m){
     $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD);
-    $sql = "INSERT INTO Movie (name, year, lenght, description, director, id_categorie, image, trailer,  min_age)
-            VALUES (:name, :year, :lenght, :description, :director, :id_categorie, :image, :trailer, :min_age)";
+    $sql = "INSERT INTO Movie (name, year, length, description, director, id_categorie, image, trailer,  min_age)
+            VALUES (:name, :year, :length, :description, :director, :id_categorie, :image, :trailer, :min_age)";
     $stmt = $cnx->prepare($sql); 
     $stmt->bindParam(':name', $n);
     $stmt->bindParam(':year', $y);
-    $stmt->bindParam(':lenght', $l);
+    $stmt->bindParam(':length', $l);
     $stmt->bindParam(':description', $d1);
     $stmt->bindParam(':id_categorie', $idc);
     $stmt->bindParam(':image', $i);
