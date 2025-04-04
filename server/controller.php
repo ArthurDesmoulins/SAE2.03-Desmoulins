@@ -31,12 +31,12 @@ function addMovieController(){
     $length = $_REQUEST['length'];
     $description = $_REQUEST['description'];
     $director = $_REQUEST['director'];
-    $id_categorie = $_REQUEST['id_categorie'];
+    $id_category = $_REQUEST['id_category'];
     $image = $_REQUEST['image'];
     $trailer = $_REQUEST['trailer'];
     $min_age = $_REQUEST['min_age'];
 
-    $ok = addMovie($name, $year, $lenght, $description, $director, $id_categorie, $image, $trailer, $min_age);
+    $ok = addMovie($name, $year, $lenght, $description, $director, $id_category, $image, $trailer, $min_age);
     if($ok!=0){
         return "Le film $name a bien été ajouté à la base de donnée";
     }
