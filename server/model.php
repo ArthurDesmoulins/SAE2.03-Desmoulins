@@ -28,7 +28,7 @@ function getAllMovies(){
     return $res;
 }
 
-function addMovie($n, $y, $l, $d1, $d2, $idc, $i, $t, $m){
+function addMovies($n, $y, $l, $d1, $d2, $idc, $i, $t, $m){
     $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD);
     $sql = "REPLACE INTO Movie (name, year, length, description, director, id_category, image, trailer,  min_age)
             VALUES (:name, :year, :length, :description, :director, :id_category, :image, :trailer, :min_age)";

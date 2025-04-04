@@ -1,25 +1,77 @@
 <div class="formulaire">
-    <div class="formulaire_info">
-      <h2>Info</h2>
+  <h2>Info</h2>
+  <div class="formulaire__info">
+    <div class="label__input">
       <label for="titre">Titre</label>
-      <input type="text" id="titre" class="formulaire_info-titre"></input>
+      <input name="name" type="text" id="titre" class="formulaire_info-titre" />
+    </div>
+    <div class="label__input">
       <label for="genre">Genre</label>
-      <input type="text" id="genre" class="formulaire_info-genre"></input>
+      <input
+        name="id__category"
+        type="text"
+        id="genre"
+        class="formulaire__info-genre"
+      />
+    </div>
+    <div class="label__input">
       <label for="date">Date de sortie</label>
-      <input type="text" id="date" class="formulaire_info-date"></input>
+      <input name="year" type="number" id="date" class="formulaire_info-date" />
+    </div>
+    <div class="label__input">
       <label for="real">Réalisateur</label>
-      <input type="text" id="real" class="formulaire_info-real"></input>
+      <input
+        name="director"
+        type="text"
+        id="real"
+        class="formulaire__info-real"
+      />
+    </div>
+    <div class="label__input">
       <label for="duree">Durée en minute</label>
-      <input type="text" id="duree" class="formulaire_info-duree"></input>
+      <input
+        name="length"
+        type="number"
+        id="duree"
+        class="formulaire_info-duree"
+      />
+    </div>
+    <div class="label__input">
       <label for="age">Restriction d'âge</label>
-      <input type="text" id="age" class="formulaire_info-age"></input>
+      <input
+        name="min_age"
+        type="number"
+        id="age"
+        class="formulaire_info-age"
+      />
+    </div>
+    <div class="label__input">
       <label for="desc">Description</label>
-      <input type="text" id="desc" class="formulaire_info-desc"></input>
+      <textarea
+        class="formulaire__desc"
+        name="description"
+        type="text"
+        id="desc"
+        class="formulaire_info-desc"
+      ></textarea>
     </div>
-    <div class="formulaire_fichier">
-      <h2>Fichier</h2>
-      <input class="formulaire_fichier-affiche"></input>
-      <input class="formulaire_fichier-url-trailer"></input>
-    </div>
-    <input onclick="{{handler}}" type="button" value="Delete" name="todo">
   </div>
+  <h2>Fichier</h2>
+  <div class="formulaire__fichier">
+    <div class="label__input2">
+      <label for="desc">Url de l'image</label>
+      <input name="image" class="formulaire_fichier-affiche" />
+    </div>
+    <div class="label__input2">
+      <label for="desc">Url du trailer</label>
+      <input name="trailer" class="formulaire_fichier-url-trailer" />
+    </div>
+  </div>
+  <input
+    class="button"
+    onclick="{{handler}}"
+    type="button"
+    value="Ajouter le film"
+    name="todo"
+  />
+</div>

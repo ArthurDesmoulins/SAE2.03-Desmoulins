@@ -9,4 +9,4 @@ Formulaire.format = function (handler){
   return html;
 };
 
-export { Formulaire };
+export {Formulaire};

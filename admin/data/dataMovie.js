@@ -12,15 +12,18 @@ let DataMovie = {};
      * Elle prend en paramètre un jour (lundi mardi...) de la semaine et 
      * renvoie les données contenues dans la réponse du serveur (data).
      */
-
 DataMovie.add = async function(fdata){
     let config = {
         method: "POST",
         body: fdata
     };
-    let answer = await fetch(HOST_URL + "/server/script.php?todo=addMovie", config);
+    let answer = await fetch(HOST_URL + "/server/script.php?todo=addmovies", config);
     let data = await answer.json();
     return data;
 }
 
 export {DataMovie};
+
+
+
+
