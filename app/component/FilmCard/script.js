@@ -5,6 +5,7 @@ let FilmCard = {};
 
 FilmCard.format = function (movie) {
   let html = template;
+  html = html.replace('<div class="FilmCard', `<div class="FilmCard" onclick="C.handlerFilmInfo(${movie.id})"`);
   html = html.replace("{{titre}}", movie.name);
   html = html.replace("{{img}}", movie.image);
   return html;
@@ -19,3 +20,4 @@ FilmCard.formatMany = function(data){
 }
 
 export { FilmCard };
+

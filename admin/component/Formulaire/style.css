@@ -30,6 +30,16 @@ input {
   padding: 0.75rem;
 }
 
+select {
+  background-color: var(--color-soft-purple);
+  color: var(--color-white);
+  border: none;
+  border-radius: 2rem;
+  height: 2.5rem;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+}
+
 textarea {
   background-color: var(--color-soft-purple);
   color: var(--color-white);

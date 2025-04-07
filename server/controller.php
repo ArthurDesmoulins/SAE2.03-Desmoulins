@@ -38,10 +38,16 @@ function addMoviesController(){
 
     if ($name && $year && $length && $description && $director && $id_category && $image && $trailer && $min_age)
     $ok = addMovies($name, $year, $length, $description, $director, $id_category, $image, $trailer, $min_age);
-    if($ok===true){
+    if($ok != 0){
         return "Le film $name a bien été ajouté à la base de donnée";
     }
 else{
     return "Il manque un champ à remplir pour valider le film";
 }
+}
+
+function watchMoviesController(){
+    $id = $_REQUEST['name'];
+    $movie = watchMovies($title);
+    return $movie;
 }

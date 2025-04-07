@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+body{
+    background-color: rgb(46, 32, 59);
+}
+
+.FilmInfo{
+    font-family: Inter; 
+    color: white;   
+}
+
+.FilmInfo__text{
+    display: flex;
+    flex-direction: column;
+    padding-left: 5rem;
+}
+
+.FilmInfo__text-info{
+    display: flex;
+    flex-direction: row;
+}
+
+.FilmInfo__age{
+    margin-left: 3rem;
+    background-color: rgb(72, 57, 87);
+}

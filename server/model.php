@@ -46,3 +46,13 @@ function addMovies($n, $y, $l, $d1, $d2, $idc, $i, $t, $m){
     $res = $stmt->rowCount(); 
     return $res;
 }
+
+function watchMovies($id){
+    $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD);
+    $sql = "SELECT Movie.id, Movie.name, Movie.year, Movie.length, Movie.description, Movie.director, Movie.image, Movie.trailer, Movie.min_age, Movie.id_category, Category.name AS category FROM Movie JOIN Category ON Movie.id_category = Category.id WHERE Movie.id=:id";
+    $stmt = $cnx->prepare($sql);
+    $stmt -> bindParam(':id', $id);
+    $stmt -> execute();
+    $res = $stmt->fetchAll(PDO::FETCH_OBJ);
+    return $res;
+}
