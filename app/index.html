@@ -29,8 +29,8 @@
       };
 
       C.handlerFilmInfo = async function (id) {
-        let movie = await DataMovie.info(id);
-        V.renderFilmInfo(movie);
+        let data = await DataMovie.requestFilmInfo(id);
+        V.renderFilmInfo(data);
       };
 
       C.start = function () {
@@ -58,6 +58,7 @@
       };
 
       V.renderFilmInfo = function (data) {
+        if (!data) return;
         let content = document.querySelector("#content");
         content.innerHTML = FilmInfo.format(data);
       };

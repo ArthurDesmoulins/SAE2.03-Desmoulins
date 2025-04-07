@@ -1,6 +1,6 @@
 
 // URL où se trouve le répertoire "server" sur mmi.unilim.fr
-let HOST_URL = "https://mmi.unilim.fr/~desmoulins9/SAE2.03-Desmoulins/";
+let HOST_URL = "https://mmi.unilim.fr/~desmoulins9/SAE2.03-Desmoulins";
 let DataMovie = {};
 
  /**
@@ -19,7 +19,7 @@ DataMovie.request = async function(){
     return data;
 }
 
-DataMovie.info = async function(id){
+DataMovie.requestFilmInfo = async function(id){
     let answer = await fetch(HOST_URL + "/server/script.php?todo=watchmovies&id=" + id);
     let data = await answer.json();
     return data;
