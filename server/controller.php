@@ -36,11 +36,12 @@ function addMoviesController(){
     $trailer = $_REQUEST['trailer'];
     $min_age = $_REQUEST['min_age'];
 
+    if ($name && $year && $length && $description && $director && $id_category && $image && $trailer && $min_age)
     $ok = addMovies($name, $year, $length, $description, $director, $id_category, $image, $trailer, $min_age);
-    if($ok===false){
-        return "Erreur le film n'a pas pu être ajouté, l'un des formulaires n'est pas correctement rempli";
-    }
-    else{
+    if($ok===true){
         return "Le film $name a bien été ajouté à la base de donnée";
     }
+else{
+    return "Il manque un champ à remplir pour valider le film";
+}
 }
