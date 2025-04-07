@@ -47,7 +47,7 @@ else{
 }
 
 function watchMoviesController(){
-    $id = $_REQUEST['name'];
-    $movie = watchMovies($title);
+    $id = $_REQUEST['id'];
+    $movie = watchMovies($id);
     return $movie;
 }

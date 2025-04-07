@@ -57,12 +57,12 @@
         content.innerHTML = FilmCard.formatMany(data);
       };
 
-      V.renderFilmInfo = function (movie) {
+      V.renderFilmInfo = function (data) {
         let content = document.querySelector("#content");
-        content.innerHTML = FilmInfo.format(movie);
+        content.innerHTML = FilmInfo.format(data);
       };
 
-      C.start(); // Démarre l'application
+      C.start();
     </script>
   </body>
 </html>
