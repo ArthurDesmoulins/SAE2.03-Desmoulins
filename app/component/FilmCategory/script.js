@@ -1,30 +1,37 @@
-import { DataMovie } from "../../data/dataMovie";
+import { FilmCard } from "../FilmCard/script.js";
+import { DataMovie } from "../../data/dataMovie.js";
 
 let templateFile = await fetch("./component/FilmCategory/template.html");
 let template = await templateFile.text();
 
 
+
+
 let FilmCategory = {};
 
-FilmCategory.format = function (category) {
-  let html = template;
-  html = html.replace("{{title}}", category.name);
-
-  let html2 = Movie.format(category.movies || [])
-  html = html.replace("{{gridcard}}", html2)
-  return html;
+FilmCategory.format = function(category,movies) {
+    let html = template;
+    html = html.replace("{{category}}", category);
+  
+    let html1 = FilmCard.formatMany(movies);
+    html = html.replace("{{movies}}", html1);
+    return html
 };
 
-FilmCategory.formatMany = async function(categories) {
+
+FilmCategory.formatMany = async function(categories){
     let html = "";
-    for(const cat of categories){
-        const movies = await DataMovie.requestFilmCategory(cat.category);
-        html += MoieCategory.format(cat.category, movies);
+    for (const obj of categories) {
+      const movies = await DataMovie.requestFilmCategory(obj.id);
+      if (movies.length === 0){
+        continue
+      }
+      else{
+        html += FilmCategory.format(obj.name, movies);
     }
+}
     return html;
-};
+  };
 
 
-
-export { FilmCard };
-
+export { FilmCategory };

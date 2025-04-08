@@ -11,7 +11,8 @@
     <header id="header"></header>
 
     <section id="content">
-      <div class="GridCard"></div>
+      <div id="categories"></div>
+      <div id="cards"></div>
     </section>
 
     <script type="module">
@@ -19,6 +20,7 @@
       import { FilmCard } from "./component/FilmCard/script.js";
       import { DataMovie } from "./data/dataMovie.js";
       import { FilmInfo } from "./component/FilmInfo/script.js";
+      import { FilmCategory } from "./component/FilmCategory/script.js";
 
       window.C = {};
 
@@ -35,6 +37,7 @@
 
       C.start = function () {
         V.renderNavBar("C.handlerAbout()");
+        C.getFilmCategory();
         C.getMovies();
       };
 
@@ -46,6 +49,12 @@
         V.renderFilmCard(data);
       };
 
+      C.getFilmCategory = async function () {
+        let categories = await DataMovie.requestCategory();
+        let html = await FilmCategory.formatMany(categories);
+        V.renderFilmCategory(html);
+      };
+
       window.V = {};
 
       V.renderNavBar = function (hAbout) {
@@ -53,7 +62,7 @@
         header.innerHTML = NavBar.format(hAbout);
       };
       V.renderFilmCard = function (data) {
-        let content = document.querySelector(".GridCard");
+        let content = document.querySelector("#cards");
         content.innerHTML = FilmCard.formatMany(data);
       };
 
@@ -61,6 +70,11 @@
         if (!data) return;
         let content = document.querySelector("#content");
         content.innerHTML = FilmInfo.format(data);
+      };
+
+      V.renderFilmCategory = function (html) {
+        let content = document.querySelector("#categories");
+        content.innerHTML = html;
       };
 
       C.start();

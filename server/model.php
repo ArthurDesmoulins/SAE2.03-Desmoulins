@@ -66,11 +66,20 @@ function getAllCategory(){
     return $res;
 }
 
-function getFilmCategory($cat){
+function getFilmCategory($category) {
+
+    if (empty($category)) {
+        return false;
+    }
     $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD);
-    $sql = "select * from Category";
+
+    $sql = "SELECT Movie.id, Movie.name, Movie.year, Movie.length, Movie.description, Movie.director, 
+            Movie.image, Movie.trailer, Movie.min_age, Category.id AS category_id ,Category.name AS category
+            FROM Movie JOIN Category ON Movie.id_category = Category.id 
+            WHERE Category.id = :category";
     $stmt = $cnx->prepare($sql);
-    $stmt -> execute();
+    $stmt->bindParam(':category', $category);
+    $stmt->execute();
     $res = $stmt->fetchAll(PDO::FETCH_OBJ);
-    return $res;
+    return $res; 
 }
