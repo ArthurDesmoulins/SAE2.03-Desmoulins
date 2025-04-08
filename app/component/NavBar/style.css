@@ -40,3 +40,12 @@
     list-style: none;
   }
 }
+
+@media screen and (max-width: 31rem) {
+
+  .navbar__img {
+    width: 2rem;
+    border-radius: 2rem;
+    list-style: none;
+  }
+}

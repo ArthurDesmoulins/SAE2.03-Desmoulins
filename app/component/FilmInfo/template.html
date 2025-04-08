@@ -1,17 +1,26 @@
 <div class="FilmInfo">
   <iframe
+    class="FilmInfo__video"
     id="inlineFrameExample"
     width="100%"
     height="200"
     src="{{video}}"
   ></iframe>
-  <div class="FilmInfo__text">
-    <h1 class="FilmInfo__titre">{{titre}}</h1>
-    <div class="FilmInfo__text-info">
-      <p class="FilmInfo__date">{{date}}</p>
-      <p class="FilmInfo__age">{{age}}+</p>
+  <div class="FilmInfo__imagetxt">
+    <img
+      class="FilmInfo__image"
+      src="https://mmi.unilim.fr/~desmoulins9/SAE2.03-Desmoulins/server/images/{{image}}"
+      alt="rien"
+    />
+    <div class="FilmInfo__text">
+      <p class="FilmInfo__real">{{real}}</p>
+      <h1 class="FilmInfo__titre">{{titre}}</h1>
+      <div class="FilmInfo__text-info">
+        <p class="FilmInfo__age">{{age}}+</p>
+        <p class="FilmInfo__date">{{date}}</p>
+        <p class="FilmInfo__time">{{time}}min</p>
+      </div>
+      <p class="FilmInfo__desc">{{desc}}</p>
     </div>
-    <p class="FilmInfo__desc">{{desc}}</p>
-    <p class="FilmInfo__real">{{real}}</p>
   </div>
 </div>

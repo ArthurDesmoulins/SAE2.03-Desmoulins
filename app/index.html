@@ -30,7 +30,7 @@
 
       C.handlerFilmInfo = async function (id) {
         let data = await DataMovie.requestFilmInfo(id);
-        V.renderFilmInfo(data);
+        V.renderFilmInfo(data[0]);
       };
 
       C.start = function () {

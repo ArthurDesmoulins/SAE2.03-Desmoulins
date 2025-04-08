@@ -6,14 +6,38 @@ body{
 }
 
 .FilmInfo{
-    font-family: Inter; 
-    color: white;   
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: baseline;
+    font-family: Inter;  
+}
+
+.FilmInfo__video{
+    height: 30rem;
+}
+
+.FilmInfo__imagetxt{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5rem;
+}
+
+.FilmInfo__image{
+    width: 20%;
+    margin-left: 5rem;
+}
+
+.FilmInfo__titre{
+    font-size: 2.5rem;
+    margin-top: 0.3rem;
 }
 
 .FilmInfo__text{
     display: flex;
     flex-direction: column;
     padding-left: 5rem;
+    padding-top: 5rem;
+    color: var(--color-white);
 }
 
 .FilmInfo__text-info{
@@ -22,6 +46,42 @@ body{
 }
 
 .FilmInfo__age{
-    margin-left: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
     background-color: rgb(72, 57, 87);
+    border-radius: 0.5rem;
+}
+
+.FilmInfo__date{
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+
+.FilmInfo__real{
+    font-weight: 100;
+}
+
+
+.FilmInfo__desc{
+    padding-right: 30rem;
+}
+
+@media screen and (max-width: 31rem) {
+  
+    .FilmInfo__image{
+        width: 70%;
+        margin-left: 0;
+    }
+
+    .FilmInfo__imagetxt{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 5rem;
+    }
+    
 }

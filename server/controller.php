@@ -51,3 +51,12 @@ function watchMoviesController(){
     $movie = watchMovies($id);
     return $movie;
 }
+
+function readCategoryController(){
+    $category = getCategory();
+    if($category != 0){
+        return $category;
+    } else{
+        return "Erreur, les categories ne sont pas résupéré";
+    }
+}
