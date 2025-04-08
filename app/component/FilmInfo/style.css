@@ -54,11 +54,18 @@ body{
     border-radius: 0.5rem;
 }
 
+.FilmInfo__time{
+    margin-right: 1.5rem;
+}
+
 .FilmInfo__date{
     margin-left: 1.5rem;
     margin-right: 1.5rem;
 }
 
+.FilmInfo__genre{
+    font-weight: 200;
+}
 
 .FilmInfo__real{
     font-weight: 100;
@@ -83,5 +90,45 @@ body{
         flex-direction: column;
         margin-bottom: 5rem;
     }
+
+    .FilmInfo__text{
+        display: flex;
+        flex-direction: column;
+        padding-left: 2rem;
+        padding-top: 5rem;
+        color: var(--color-white);
+    }
     
+    .FilmInfo__desc{
+        padding-right: 3rem;
+    }
+}
+
+
+@media screen and (max-width: 64rem) {
+  
+    .FilmInfo__image{
+        width: 70%;
+        margin-left: 0;
+    }
+
+    .FilmInfo__imagetxt{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 5rem;
+    }
+
+    .FilmInfo__text{
+        display: flex;
+        flex-direction: column;
+        padding-left: 2rem;
+        padding-top: 5rem;
+        color: var(--color-white);
+    }
+    
+    .FilmInfo__desc{
+        padding-right: 7rem;
+    }
 }

@@ -57,7 +57,16 @@ function watchMovies($id){
     return $res;
 }
 
-function getCategory(){
+function getAllCategory(){
+    $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD);
+    $sql = "select * from Category";
+    $stmt = $cnx->prepare($sql);
+    $stmt -> execute();
+    $res = $stmt->fetchAll(PDO::FETCH_OBJ);
+    return $res;
+}
+
+function getFilmCategory($cat){
     $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD);
     $sql = "select * from Category";
     $stmt = $cnx->prepare($sql);

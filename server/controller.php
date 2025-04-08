@@ -53,10 +53,15 @@ function watchMoviesController(){
 }
 
 function readCategoryController(){
-    $category = getCategory();
+    $category = getAllCategory();
     if($category != 0){
         return $category;
     } else{
         return "Erreur, les categories ne sont pas résupéré";
     }
+}
+
+function readFilmCategoryController(){
+    $category = getFilmCategory();
+
 }

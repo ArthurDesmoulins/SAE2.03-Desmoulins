@@ -9,6 +9,7 @@ FilmInfo.format = function (movie) {
   html = html.replace("{{image}}", movie.image);
   html = html.replace("{{titre}}", movie.name);
   html = html.replace("{{date}}", movie.year);
+  html = html.replace("{{genre}}", movie.category);
   html = html.replace("{{age}}", movie.min_age);
   html = html.replace("{{time}}", movie.length);
   html = html.replace("{{desc}}", movie.description);
