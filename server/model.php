@@ -47,18 +47,6 @@ function addMovies($n, $y, $l, $d1, $d2, $idc, $i, $t, $m){
     return $res;
 }
 
-function addProfiles($name, $image, $age){
-    $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD);
-    $sql = "INSERT INTO Profiles (name, image, age) VALUES (:name, :image, :age)";
-    $stmt = $cnx->prepare($sql);
-    $stmt->bindParam(':name', $name);
-    $stmt->bindParam(':image', $image);
-    $stmt->bindParam(':age', $age);
-    $stmt->execute();
-    $res = $stmt->fetchAll(PDO::FETCH_OBJ);
-    return $res;
-}
-
 function watchMovies($id){
     $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD);
     $sql = "SELECT Movie.id, Movie.name, Movie.year, Movie.length, Movie.description, Movie.director, Movie.image, Movie.trailer, Movie.min_age, Movie.id_category, Category.name AS category FROM Movie JOIN Category ON Movie.id_category = Category.id WHERE Movie.id=:id";
@@ -95,3 +83,25 @@ function getFilmCategory($category) {
     $res = $stmt->fetchAll(PDO::FETCH_OBJ);
     return $res; 
 }
+
+function addProfiles($name, $image, $age){
+    $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD);
+    $sql = "INSERT INTO Profiles (name, image, age) VALUES (:name, :image, :age)";
+    $stmt = $cnx->prepare($sql);
+    $stmt->bindParam(':name', $name);
+    $stmt->bindParam(':image', $image);
+    $stmt->bindParam(':age', $age);
+    $stmt->execute();
+    $res = $stmt->fetchAll(PDO::FETCH_OBJ);
+    return $res;
+}
+
+function getProfiles(){
+    $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD);
+    $sql = "select * from Profiles";
+    $stmt = $cnx->prepare($sql);
+    $stmt -> execute();
+    $res = $stmt->fetchAll(PDO::FETCH_OBJ);
+    return $res;
+}
+

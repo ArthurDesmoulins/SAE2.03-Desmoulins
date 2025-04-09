@@ -9,5 +9,15 @@
       />
     </li>
     <li class="navbar__item" onclick="location.href='index.html'">Home</li>
+    <select name="profile" id="profile-select" onchange="C.changeProfiles()">
+      {{profiles}}
+    </select>
+    <li>
+      <img
+        class="navabar__profiles-img"
+        src="../server/photo/{{photo}}"
+        alt="rien"
+      />
+    </li>
   </ul>
 </nav>

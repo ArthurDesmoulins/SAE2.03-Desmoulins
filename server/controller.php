@@ -81,3 +81,8 @@ function readFilmCategoryController(){
    $movies = getFilmCategory($id);
    return $movies;
 }
+
+function readProfilesController(){
+    $profiles = getProfiles();
+    return $profiles;
+}
