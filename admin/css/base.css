@@ -6,7 +6,23 @@
 
 @import "../component/Log/style.css" layer(components);
 @import "../component/Formulaire/style.css" layer(components);
+@import "../component/FormulaireProfiles/style.css" layer(components);
 
 body {
   background-color: var(--bg-color);
+}
+
+.Formulaires{
+  display: flex;
+  flex-direction: row;
+  gap:  1rem;
+  width: 100%;
+}
+
+.addMovie{
+  width: 55%;
+}
+
+.addProfiles{
+  width: 45%;
 }

@@ -46,6 +46,21 @@ else{
 }
 }
 
+function addProfilesController(){
+    $name = $_REQUEST['name'];
+    $age = $_REQUEST['age'];
+    $image = $_REQUEST['image'];
+
+    if ($name && $age && $image)
+    $ok = addProfiles($name, $age, $image);
+    if($ok != 0){
+        return "Le profil $name a bien été ajouté à la base de donnée";
+    }
+else{
+    return "Il manque un champ à remplir pour valider le profil";
+}
+}
+
 function watchMoviesController(){
     $id = $_REQUEST['id'];
     $movie = watchMovies($id);

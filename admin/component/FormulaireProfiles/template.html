@@ -1,0 +1,36 @@
+<form class="FormulaireProfiles">
+  <div class="FormulaireProfiles__profiles">
+    <h1 class="FormulaireProfiles__title">Ajouter un profil</h1>
+    <div class="FormulaireProfiles__label-input">
+      <label for="duree">Nom du profil</label>
+      <input
+        name="name"
+        type="text"
+        id="name"
+        class="FormulaireProfiles__name"
+        required
+      />
+    </div>
+    <div class="FormulaireProfiles__label-input">
+      <label for="duree">Url de la photo de profil</label>
+      <input
+        name="image"
+        type="text"
+        id="image"
+        class="FormulaireProfiles__image"
+        required
+      />
+    </div>
+    <div class="FormulaireProfiles__label-input">
+      <label for="duree">Age du profil</label>
+      <input name="age" type="text" id="age" class="formulaire__age" required />
+    </div>
+    <input
+      class="FormulaireProfiles__button"
+      onclick="{{handler}}"
+      type="button"
+      value="Ajouter le profil"
+      name="todo"
+    />
+  </div>
+</form>

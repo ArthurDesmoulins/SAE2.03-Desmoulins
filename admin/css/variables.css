@@ -11,6 +11,8 @@
 
   --bg-color: rgb(46, 32, 59);
   --color-soft-purple: rgb(72, 57, 87);
+  --color-hard-purple: rgb(34, 16, 53);
+  --color-purple: rgb(39, 31, 48);
 
   /* Sementic Tokens */
   --color-fg: var(--color-white);

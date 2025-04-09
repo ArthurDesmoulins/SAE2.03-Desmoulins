@@ -22,7 +22,7 @@ FilmCategory.format = function(category,movies) {
 FilmCategory.formatMany = async function(categories){
     let html = "";
     for (const obj of categories) {
-      const movies = await DataMovie.requestFilmCategory(obj.id);
+      let movies = await DataMovie.requestFilmCategory(obj.id);
       if (movies.length === 0){
         continue
       }

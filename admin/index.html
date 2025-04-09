@@ -8,13 +8,18 @@
   </head>
   <body>
     <section id="log"></section>
-    <section id="addMovie"></section>
+    <div class="Formulaires">
+      <section class="addMovie" id="addMovie"></section>
+      <section class="addProfiles" id="addProfiles"></section>
+    </div>
 
     <script type="module">
       import { Log } from "./component/Log/script.js";
       import { Formulaire } from "./component/Formulaire/script.js";
+      import { FormulaireProfiles } from "./component/FormulaireProfiles/script.js";
 
       import { DataMovie } from "./data/dataMovie.js";
+      import { DataProfiles } from "./data/dataProfiles.js";
 
       window.C = {};
 
@@ -25,9 +30,17 @@
         V.renderLog(res);
       };
 
+      C.handlerUpdateProfiles = async function () {
+        let form = document.querySelector(".FormulaireProfiles");
+        let fd = new FormData(form);
+        let res = await DataProfiles.add(fd);
+        V.renderLog(res);
+      };
+
       C.start = function () {
         V.renderLog("Démarrage de l'application");
         V.renderAddMovie("C.handlerUpdate()");
+        V.renderAddProfiles("C.handlerUpdateProfiles()");
       };
 
       window.V = {};
@@ -40,6 +53,11 @@
       V.renderAddMovie = function (handler) {
         let content = document.querySelector("#addMovie");
         content.innerHTML = Formulaire.format(handler);
+      };
+
+      V.renderAddProfiles = function (handler) {
+        let content = document.querySelector("#addProfiles");
+        content.innerHTML = FormulaireProfiles.format(handler);
       };
 
       C.start();

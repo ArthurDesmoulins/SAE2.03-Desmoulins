@@ -1,36 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-.formulaire {
+.FormulaireProfiles {
   font-family: Inter;
-  color: var(--color-white);
+  color: var(--color-white);  
 }
 
-.formulaire__film{
+.FormulaireProfiles__profiles{
   margin-top: 3rem;
   padding: 2rem;
   background-color: var(--color-hard-purple);  
   border-radius: 1.5rem;
 }
 
-.formulaire__title {
+.FormulaireProfiles__title {
   font-size: 2rem;
   margin-left: 2rem;
   margin-top: 2rem;
 }
 
-.formulaire__info {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-left: 1.5rem;
-}
-
-.label__input {
+.FormulaireProfiles__label-input {
   display: flex;
   flex-direction: column;
   margin-right: 2rem;
   margin-bottom: 1.5rem;
-  width: 25%;
+  width: 85%;
 }
 
 input {
@@ -43,47 +36,7 @@ input {
   padding: 0.75rem;
 }
 
-select {
-  background-color: var(--color-soft-purple);
-  color: var(--color-white);
-  border: none;
-  border-radius: 2rem;
-  height: 2.5rem;
-  margin-top: 0.5rem;
-  padding: 0.75rem;
-}
-
-textarea {
-  background-color: var(--color-soft-purple);
-  color: var(--color-white);
-  border: none;
-  border-radius: 2rem;
-  height: 2rem;
-  margin-top: 0.5rem;
-  padding: 0.75rem;
-}
-
-.formulaire__desc {
-  width: 350%;
-  height: 10rem;
-}
-
-.formulaire__fichier {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin-left: 1.5rem;
-}
-
-.label__input2 {
-  display: flex;
-  flex-direction: column;
-  margin-right: 2rem;
-  margin-bottom: 1.5rem;
-  width: 75%;
-}
-
-.button {
+.FormulaireProfiles__button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,12 +50,12 @@ textarea {
   background-color: var(--color-white);
 }
 
-.button:hover {
+.FormulaireProfiles__button:hover {
   color: var(--color-white);
   background-color: var(--color-soft-purple);
 }
 
-.button:active {
+.FormulaireProfiles__button:active {
   color: var(--color-white);
   background-color: var(--color-purple);
 }
@@ -113,7 +66,6 @@ textarea {
     padding: 2rem;
     background-color: var(--color-hard-purple);  
     border-radius: 1.5rem;
-    width: 100%;
   }
   
   .label__input {
