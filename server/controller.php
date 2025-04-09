@@ -77,8 +77,7 @@ function readCategoryController(){
 }
 
 function readFilmCategoryController(){
-    $id = $_REQUEST["idcategory"];
+    $id = $_REQUEST["category"];
    $movies = getFilmCategory($id);
-   return $movies ;
-    
+   return $movies;
 }
