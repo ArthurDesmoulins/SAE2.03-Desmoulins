@@ -1,4 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 .navbar {
+  font-family: Inter;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,12 +11,16 @@
   color: var(--color-fg);
   background-color: var(--color-bg);
 
+
   .navbar__item {
     --_offset: 0.2rem;
     padding: 0.5rem 1rem;
     padding-left: 0;
     margin-left: 6rem;
     text-decoration: underline;
+    font-size: 2rem;
+    list-style: none;
+    text-transform: uppercase;
     text-decoration-thickness: 0.1rem;
     text-underline-offset: var(--_offset);
     cursor: pointer;
