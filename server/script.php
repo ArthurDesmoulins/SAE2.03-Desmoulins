@@ -78,7 +78,7 @@ if ( isset($_REQUEST['todo']) ){
 
     case 'readfilmcategory':
       $data = readFilmCategoryController();
-      break;
+      break; //modifier cette fonction avec ce que fait la fonction ci-dessous et donc supprimer la fonction ci-dessous
 
     case 'readmoviesbyage' :
         if(isset($_REQUEST['age'])){
