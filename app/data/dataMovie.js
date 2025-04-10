@@ -37,4 +37,15 @@ DataMovie.requestFilmCategory = async function(idcategory){
     return categories;
 }
 
+/**
+ * Récupère les films adaptés à l'âge de l'utilisateur
+ * @param {number} age L'âge de l'utilisateur
+ */
+
+DataMovie.requestMoviesByAge = async function(age){
+    let answer = await fetch(HOST_URL + "/server/script.php?todo=readmoviesbyage&age=" + age);
+    let data = await answer.json();
+    return data;
+}
+
 export {DataMovie};

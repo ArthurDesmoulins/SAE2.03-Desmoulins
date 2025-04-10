@@ -86,3 +86,11 @@
         $profiles = getProfiles();
         return $profiles;
     }
+
+    function readMoviesByAgeController($age){
+    $movies = getMoviesByAge($age);
+    if(empty($movies)){
+        return ["message" => "Aucun film disponible pour votre tranche d'âge."];
+    }
+    return $movies;
+}
