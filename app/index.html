@@ -21,8 +21,15 @@
       import { DataMovie } from "./data/dataMovie.js";
       import { FilmInfo } from "./component/FilmInfo/script.js";
       import { FilmCategory } from "./component/FilmCategory/script.js";
+      import { DataProfiles } from "./data/dataProfiles.js";
 
       window.C = {};
+
+      C.start = function () {
+        V.renderNavBar("C.handlerAbout()");
+        C.getFilmCategory();
+        C.getMovies();
+      };
 
       C.handlerAbout = function () {
         alert(
@@ -33,12 +40,6 @@
       C.handlerFilmInfo = async function (id) {
         let data = await DataMovie.requestFilmInfo(id);
         V.renderFilmInfo(data[0]);
-      };
-
-      C.start = function () {
-        V.renderNavBar("C.handlerAbout()");
-        C.getFilmCategory();
-        C.getMovies();
       };
 
       C.getMovies = async function () {
@@ -55,15 +56,41 @@
         V.renderFilmCategory(html);
       };
 
+      C.handleProfileChange = function () {
+        const select = document.getElementById("profile-select");
+        const avatarImg = document.getElementById("profile-image");
+
+        console.log("Select:", select);
+        console.log("Avatar:", avatarImg);
+
+        if (!select || !avatarImg) {
+          console.error("Éléments HTML non trouvés");
+          return;
+        }
+
+        const baseURL =
+          "https://mmi.unilim.fr/~desmoulins9/SAE2.03-Desmoulins/server/photo/";
+        const defaultImage = baseURL + "photo1.jpg";
+
+        const selectedOption = select.options[select.selectedIndex];
+        console.log("Selected option:", selectedOption);
+
+        if (selectedOption && selectedOption.value !== "") {
+          const avatarPath = selectedOption.getAttribute("data-avatar");
+          console.log("Avatar path:", avatarPath);
+          avatarImg.src = avatarPath ? baseURL + avatarPath : defaultImage;
+          avatarImg.classList.remove("hidden");
+        } else {
+          avatarImg.src = defaultImage;
+          avatarImg.classList.add("hidden");
+        }
+      };
       window.V = {};
 
-      V.renderNavBar = function (hAbout) {
+      V.renderNavBar = async function (hHome) {
         let header = document.querySelector("#header");
-        header.innerHTML = NavBar.format(hAbout);
-      };
-      V.renderFilmCard = function (data) {
-        let content = document.querySelector("#");
-        content.innerHTML = FilmCard.formatMany(data);
+        let profiles = await DataProfiles.read();
+        header.innerHTML = NavBar.format(hHome, profiles);
       };
 
       V.renderFilmInfo = function (data) {

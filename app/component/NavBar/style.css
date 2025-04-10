@@ -1,22 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
 .navbar {
-  font-family: Inter;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   padding: 1rem 3rem;
-  padding-left: 0;
-  margin-bottom: 3rem;
   color: var(--color-fg);
   background-color: var(--color-bg);
-
 
   .navbar__item {
     --_offset: 0.2rem;
     padding: 0.5rem 1rem;
     padding-left: 0;
-    margin-left: 6rem;
+    margin-left: 4rem;
     text-decoration: underline;
     font-size: 2rem;
     list-style: none;
@@ -29,43 +24,54 @@
       --_offset: 0.5rem;
     }
   }
-
-  .navbar__list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-  }
-
-  .navbar__profiles {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-  }
-
-  .navbar__img {
-    width: 7rem;
-    border-radius: 2rem;
-    list-style: none;
-  }
-
-  .navbar__li {
-    list-style: none;
-  }
 }
 
-@media screen and (max-width: 31rem) {
+.navbar__img {
+  width: 7rem;
+  border-radius: 2rem;
+  list-style: none;
+}
 
-  .navbar__img {
-    width: 2rem;
-    border-radius: 2rem;
-    list-style: none;
-  }
+.navbar__li {
+  list-style: none;
+}
 
-  .navbar__item {
-    margin-left: 1.5rem;
-    font-size: 1.5rem;
+.navbar__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  padding: 0;
+  list-style: none;
+}
 
-  }
+.navbar__profiles {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
 
+.navbar__profile-select {
+  background-color: var(--bg-color);
+}
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-white);
+  transition: opacity 0.3s ease;
+}
+
+option {
+  color: var(--color-white);
+}
+
+select {
+  color: var(--color-white);
+}
+
+.hidden {
+  display: none;
 }

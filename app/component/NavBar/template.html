@@ -1,5 +1,8 @@
 <nav class="navbar font-sans">
   <ul class="navbar__list">
+    <li class="navbar__item" onclick="window.location.href='index.html'">
+      Home
+    </li>
     <li class="navbar__li">
       <img
         class="navbar__img"
@@ -8,16 +11,22 @@
         alt="rien"
       />
     </li>
-    <li class="navbar__item" onclick="location.href='index.html'">Home</li>
-    <select name="profile" id="profile-select" onchange="C.changeProfiles()">
-      {{profiles}}
-    </select>
-    <li>
-      <img
-        class="navabar__profiles-img"
-        src="../server/photo/{{photo}}"
-        alt="rien"
-      />
-    </li>
   </ul>
+
+  <div class="navbar__profiles">
+    <img
+      id="profile-image"
+      src="{{imageURL}}"
+      alt="Profile Image"
+      class="profile-avatar {{initialClass}}"
+    />
+    <select
+      id="profile-select"
+      required
+      class="navbar__profile-select"
+      onchange="C.handleProfileChange()"
+    >
+      {{profileOptions}}
+    </select>
+  </div>
 </nav>
