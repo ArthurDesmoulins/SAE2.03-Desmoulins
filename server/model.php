@@ -66,22 +66,30 @@ function getAllCategory(){
     return $res;
 }
 
-function getFilmCategory($category) {
-
-    if (empty($category)) {
-        return false;
-    }
+function getFilmCategory($category, $age = null) {
     $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD);
-
-    $sql = "SELECT Movie.id, Movie.name, Movie.year, Movie.length, Movie.description, Movie.director, 
-            Movie.image, Movie.trailer, Movie.min_age, Category.id AS category_id ,Category.name AS category
-            FROM Movie JOIN Category ON Movie.id_category = Category.id 
-            WHERE Category.id = :category";
-    $stmt = $cnx->prepare($sql);
-    $stmt->bindParam(':category', $category);
+    
+    if ($age == null) {
+        $sql = "SELECT Movie.*, Category.name AS category 
+                FROM Movie 
+                JOIN Category ON Movie.id_category = Category.id 
+                WHERE Category.id = :category
+                ORDER BY Movie.name ASC";
+        $stmt = $cnx->prepare($sql);
+        $stmt->bindParam(':category', $category);
+    } else {
+        $sql = "SELECT Movie.*, Category.name AS category 
+                FROM Movie 
+                JOIN Category ON Movie.id_category = Category.id 
+                WHERE Category.id = :category 
+                AND Movie.min_age <= :age";
+        $stmt = $cnx->prepare($sql);
+        $stmt->bindParam(':category', $category);
+        $stmt->bindParam(':age', $age);
+    }
+    
     $stmt->execute();
-    $res = $stmt->fetchAll(PDO::FETCH_OBJ);
-    return $res; 
+    return $stmt->fetchAll(PDO::FETCH_OBJ);
 }
 
 function addProfiles($name, $image, $age){
@@ -105,12 +113,3 @@ function getProfiles(){
     return $res;
 }
 
-function getMoviesByAge($age){
-    $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD);
-    $sql = "SELECT * FROM Movie WHERE min_age <= :age";
-    $stmt = $cnx->prepare($sql);
-    $stmt->bindParam(':age', $age);
-    $stmt->execute();
-    $res = $stmt->fetchAll(PDO::FETCH_OBJ);
-    return $res;
-}

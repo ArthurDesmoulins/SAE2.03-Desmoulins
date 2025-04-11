@@ -19,17 +19,24 @@ FilmCategory.format = function(category,movies) {
 };
 
 
-FilmCategory.formatMany = async function(categories){
+FilmCategory.formatMany =  async function(categories) {
     let html = "";
+    const select = document.getElementById('profile-select');
+    const selectedOption = select ? select.selectedOptions[0] : null;
+    
     for (const obj of categories) {
-      let movies = await DataMovie.requestFilmCategory(obj.id);
-      if (movies.length === 0){
-        continue
-      }
-      else{
-        html += FilmCategory.format(obj.name, movies);
+        let movies;
+        if (!selectedOption || selectedOption.value === "") {
+            movies = await DataMovie.requestMovieCategory(obj.id, null);
+        } else {
+            const age = selectedOption.getAttribute('data-dob');
+            movies = await DataMovie.requestMovieCategory(obj.id, age);
+        }
+        
+        if (Array.isArray(movies) && movies.length > 0) {
+            html += FilmCategory.format(obj.name, movies);
+        }
     }
-}
     return html;
   };
 

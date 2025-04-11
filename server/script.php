@@ -80,17 +80,6 @@ if ( isset($_REQUEST['todo']) ){
       $data = readFilmCategoryController();
       break; //modifier cette fonction avec ce que fait la fonction ci-dessous et donc supprimer la fonction ci-dessous
 
-    case 'readmoviesbyage' :
-        if(isset($_REQUEST['age'])){
-          $age = $_REQUEST['age'];
-          $data = readMoviesByAgeController($age);
-        }else{
-          echo json_encode('[error] missing age parameter');
-          http_response_code(400);
-          exit();
-        }
-        break;
-
     default: // il y a un paramètre todo mais sa valeur n'est pas reconnue/supportée
       echo json_encode('[error] Unknown todo value');
       http_response_code(400); // 400 == "Bad request"

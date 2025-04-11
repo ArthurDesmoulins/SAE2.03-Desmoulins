@@ -31,21 +31,16 @@ DataMovie.requestCategory = async function(){
     return categories;
 }
 
-DataMovie.requestFilmCategory = async function(idcategory){
-    let answer = await fetch(HOST_URL + "/server/script.php?todo=readfilmcategory&category=" + idcategory);
-    let categories = await answer.json();
-    return categories;
-}
-
-/**
- * Récupère les films adaptés à l'âge de l'utilisateur
- * @param {number} age L'âge de l'utilisateur
- */
-
-DataMovie.requestMoviesByAge = async function(age){
-    let answer = await fetch(HOST_URL + "/server/script.php?todo=readmoviesbyage&age=" + age);
-    let data = await answer.json();
+ DataMovie.requestMovieCategory = async function (idcategory, age) {
+    let url = HOST_URL + "/server/script.php?todo=readfilmcategory&id=" + idcategory;
+    
+    if (age) {
+        url += "&age=" + age;
+    }
+    
+    let response = await fetch(url);
+    let data = await response.json();
     return data;
-}
+};
 
 export {DataMovie};

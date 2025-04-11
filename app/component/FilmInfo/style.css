@@ -1,134 +1,130 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-
-body{
-    background-color: rgb(46, 32, 59);
+body {
+  background-color: rgb(46, 32, 59);
 }
 
-.FilmInfo{
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: baseline;
-    font-family: Inter;  
+.FilmInfo {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: baseline;
+  font-family: Inter;
 }
 
-.FilmInfo__video{
-    height: 30rem;
+.FilmInfo__video {
+  height: 30rem;
 }
 
-.FilmInfo__imagetxt{
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 5rem;
+.FilmInfo__imagetxt {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5rem;
 }
 
-.FilmInfo__image{
-    width: 20%;
-    margin-left: 5rem;
+.FilmInfo__image {
+  width: 20%;
+  margin-left: 5rem;
+  margin-top: 2rem;
 }
 
-.FilmInfo__titre{
-    font-size: 2.5rem;
-    margin-top: 0.3rem;
+.FilmInfo__titre {
+  font-size: 2.5rem;
+  margin-top: 0.3rem;
 }
 
-.FilmInfo__text{
-    display: flex;
-    flex-direction: column;
-    padding-left: 5rem;
-    padding-top: 5rem;
-    color: var(--color-white);
+.FilmInfo__text {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5rem;
+  padding-top: 5rem;
+  color: var(--color-white);
 }
 
-.FilmInfo__text-info{
-    display: flex;
-    flex-direction: row;
+.FilmInfo__text-info {
+  display: flex;
+  flex-direction: row;
 }
 
-.FilmInfo__age{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 3rem;
-    background-color: rgb(72, 57, 87);
-    border-radius: 0.5rem;
+.FilmInfo__age {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  background-color: rgb(72, 57, 87);
+  border-radius: 0.5rem;
 }
 
-.FilmInfo__time{
-    margin-right: 1.5rem;
+.FilmInfo__time {
+  margin-right: 1.5rem;
 }
 
-.FilmInfo__date{
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+.FilmInfo__date {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
 
-.FilmInfo__genre{
-    font-weight: 200;
+.FilmInfo__genre {
+  font-weight: 200;
 }
 
-.FilmInfo__real{
-    font-weight: 100;
+.FilmInfo__real {
+  font-weight: 100;
 }
 
-
-.FilmInfo__desc{
-    padding-right: 30rem;
+.FilmInfo__desc {
+  padding-right: 30rem;
 }
 
 @media screen and (max-width: 31rem) {
-  
-    .FilmInfo__image{
-        width: 70%;
-        margin-left: 0;
-    }
+  .FilmInfo__image {
+    width: 70%;
+    margin-left: 0;
+  }
 
-    .FilmInfo__imagetxt{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin-bottom: 5rem;
-    }
+  .FilmInfo__imagetxt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 5rem;
+  }
 
-    .FilmInfo__text{
-        display: flex;
-        flex-direction: column;
-        padding-left: 2rem;
-        padding-top: 5rem;
-        color: var(--color-white);
-    }
-    
-    .FilmInfo__desc{
-        padding-right: 3rem;
-    }
+  .FilmInfo__text {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-top: 5rem;
+    color: var(--color-white);
+  }
+
+  .FilmInfo__desc {
+    padding-right: 3rem;
+  }
 }
 
-
 @media screen and (max-width: 64rem) {
-  
-    .FilmInfo__image{
-        width: 70%;
-        margin-left: 0;
-    }
+  .FilmInfo__image {
+    width: 70%;
+    margin-left: 0;
+  }
 
-    .FilmInfo__imagetxt{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin-bottom: 5rem;
-    }
+  .FilmInfo__imagetxt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 5rem;
+  }
 
-    .FilmInfo__text{
-        display: flex;
-        flex-direction: column;
-        padding-left: 2rem;
-        padding-top: 5rem;
-        color: var(--color-white);
-    }
-    
-    .FilmInfo__desc{
-        padding-right: 7rem;
-    }
+  .FilmInfo__text {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-top: 5rem;
+    color: var(--color-white);
+  }
+
+  .FilmInfo__desc {
+    padding-right: 7rem;
+  }
 }

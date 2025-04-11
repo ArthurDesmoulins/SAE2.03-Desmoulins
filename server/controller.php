@@ -77,9 +77,16 @@
     }
 
     function readFilmCategoryController(){
-        $id = $_REQUEST["category"];
-    $movies = getFilmCategory($id);
-    return $movies;
+        $id = $_REQUEST['id'];
+        $age = $_REQUEST['age'];
+        
+        $movies = getFilmCategory($id, $age);
+        
+        if ($movies != 0) {
+            return $movies;
+        } else {
+            return "La catégorie de ces films n'a pas été récupérée";
+        }
     }
 
     function readProfilesController(){
@@ -87,10 +94,3 @@
         return $profiles;
     }
 
-    function readMoviesByAgeController($age){
-    $movies = getMoviesByAge($age);
-    if(empty($movies)){
-        return ["message" => "Aucun film disponible pour votre tranche d'âge."];
-    }
-    return $movies;
-}
