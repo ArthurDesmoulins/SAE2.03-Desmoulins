@@ -3,11 +3,9 @@ let template = await templateFile.text();
 
 let NavBar = {};
 
-NavBar.format = function (hHome, profiles) {
+NavBar.format = function (profiles) {
     let html = template;
-    html = html.replace("{{hHome}}", hHome);
     html = html.replace("{{profileOptions}}", NavBar.profilesOptions(profiles));
-    const defaultImage = "https://mmi.unilim.fr/~cakir4/SAE2.03-Huzeyfe_ckr/server/images/image-avatar.webp";
     html = html.replace("{{imageURL}}", defaultImage);
     html = html.replace("{{initialClass}}", "hidden");
     

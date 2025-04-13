@@ -22,6 +22,23 @@ DataProfiles.add = async function(fdata){
     return data;
 }
 
+DataProfiles.change = async function(id, name, age, image) {
+    const formData = new FormData();
+    formData.append("id", id);
+    formData.append("name", name);
+    formData.append("age", age);
+    formData.append("image", image);
+
+    let config = {
+        method: "POST",
+        body: formData
+    };
+
+    let answer = await fetch(HOST_URL + "/server/script.php?todo=changeprofiles", config);
+    let data = await answer.json();
+    return data;
+};
+
 export {DataProfiles};
 
 

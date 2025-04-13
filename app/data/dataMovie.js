@@ -32,12 +32,7 @@ DataMovie.requestCategory = async function(){
 }
 
  DataMovie.requestMovieCategory = async function (idcategory, age) {
-    let url = HOST_URL + "/server/script.php?todo=readfilmcategory&id=" + idcategory;
-    
-    if (age) {
-        url += "&age=" + age;
-    }
-    
+    let url = HOST_URL + "/server/script.php?todo=readfilmcategory&id=" + idcategory + "&age=" + age;
     let response = await fetch(url);
     let data = await response.json();
     return data;

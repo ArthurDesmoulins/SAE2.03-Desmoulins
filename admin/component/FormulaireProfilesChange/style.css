@@ -1,24 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-.FormulaireProfiles {
+.FormulaireProfilesChange {
   font-family: Inter;
   color: var(--color-white);
 }
 
-.FormulaireProfiles__profiles {
-  margin-top: 3rem;
+.FormulaireProfilesChange__profiles {
   padding: 2rem;
   background-color: var(--color-hard-purple);
   border-radius: 1.5rem;
 }
 
-.FormulaireProfiles__title {
+.FormulaireProfilesChange__title {
   font-size: 2rem;
   margin-left: 2rem;
-  margin-top: 2rem;
 }
 
-.FormulaireProfiles__label-input {
+.FormulaireProfilesChange__label-input {
   display: flex;
   flex-direction: column;
   margin-right: 2rem;
@@ -36,7 +34,7 @@ input {
   padding: 0.75rem;
 }
 
-.FormulaireProfiles__button {
+.FormulaireProfilesChange__button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -50,12 +48,12 @@ input {
   background-color: var(--color-white);
 }
 
-.FormulaireProfiles__button:hover {
+.FormulaireProfilesChange__button:hover {
   color: var(--color-white);
   background-color: var(--color-soft-purple);
 }
 
-.FormulaireProfiles__button:active {
+.FormulaireProfilesChange__button:active {
   color: var(--color-white);
   background-color: var(--color-purple);
 }

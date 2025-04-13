@@ -104,6 +104,20 @@ function addProfiles($name, $image, $age){
     return $res;
 }
 
+function changeProfiles($id, $name, $image, $age){
+    $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD);
+    $sql = "UPDATE Profiles SET name=:name, image=:image, age=:age WHERE id=:id";
+    $stmt = $cnx->prepare($sql);
+    $stmt->bindParam(':id', $id);
+    $stmt->bindParam(':name', $name);
+    $stmt->bindParam(':image', $image);
+    $stmt->bindParam(':age', $age);
+    $stmt->execute();
+    $res = $stmt->rowCount(); 
+    return $res;
+ 
+}
+
 function getProfiles(){
     $cnx = new PDO("mysql:host=".HOST.";dbname=".DBNAME, DBLOGIN, DBPWD);
     $sql = "select * from Profiles";

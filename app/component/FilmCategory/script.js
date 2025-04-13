@@ -18,27 +18,23 @@ FilmCategory.format = function(category,movies) {
     return html
 };
 
-
-FilmCategory.formatMany =  async function(categories) {
+FilmCategory.formatMany = async function (categories, age) {
     let html = "";
-    const select = document.getElementById('profile-select');
-    const selectedOption = select ? select.selectedOptions[0] : null;
-    
-    for (const obj of categories) {
-        let movies;
-        if (!selectedOption || selectedOption.value === "") {
-            movies = await DataMovie.requestMovieCategory(obj.id, null);
-        } else {
-            const age = selectedOption.getAttribute('data-dob');
-            movies = await DataMovie.requestMovieCategory(obj.id, age);
-        }
-        
-        if (Array.isArray(movies) && movies.length > 0) {
-            html += FilmCategory.format(obj.name, movies);
+
+    for (const category of categories) {
+        const movies = await DataMovie.requestMovieCategory(category.id, age);
+
+        if (movies.length > 0) {
+            html += FilmCategory.format(category.name, movies);
         }
     }
+
+    if (html === "") {
+        html = "<p>Aucun film disponible pour votre tranche d'âge.</p>";
+    }
+
     return html;
-  };
+};
 
 
 export { FilmCategory };

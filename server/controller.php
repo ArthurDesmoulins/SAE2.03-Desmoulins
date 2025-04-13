@@ -61,6 +61,28 @@
     }
     }
 
+    function changeProfilesController(){
+        if (!isset($_REQUEST['id'], $_REQUEST['name'], $_REQUEST['age'], $_REQUEST['image'])) {
+            return "Il manque un champ à remplir pour modifier le profil";
+        }
+
+        $id = $_REQUEST['id'];
+        $name = $_REQUEST['name'];
+        $age = $_REQUEST['age'];
+        $image = $_REQUEST['image'];
+
+        if (trim($name) === '' || trim($age) === '' || trim($image) === '') {
+            return "Tous les champs doivent être remplis";
+        }
+
+        $ok = changeProfiles($id, $name, $image, $age); 
+        if($ok != 0){
+            return "Le profil a bien été modifié";
+        } else {
+            return "Erreur lors de la modification du profil";
+        }
+}
+
     function watchMoviesController(){
         $id = $_REQUEST['id'];
         $movie = watchMovies($id);

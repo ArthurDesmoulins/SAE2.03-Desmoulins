@@ -59,32 +59,37 @@
         V.renderFilmCategory(html);
       };
 
-      C.handleProfileChange = function () {
+      C.handleProfileChange = async function () {
         const select = document.getElementById("profile-select");
-        const avatarImg = document.getElementById("profile-image");
-
-        if (!select || !avatarImg) {
-          console.error("Éléments HTML non trouvés");
+        if (!select) {
+          console.error("Élément select introuvable");
           return;
         }
 
-        const baseURL =
-          "https://mmi.unilim.fr/~desmoulins9/SAE2.03-Desmoulins/server/photo/";
-        const defaultImage = baseURL + "photo1.jpg";
-
-        const selectedOption = select.options[select.selectedIndex];
-
-        if (selectedOption && selectedOption.value !== "") {
-          const avatarPath = selectedOption.getAttribute("data-avatar");
-          avatarImg.src = avatarPath ? baseURL + avatarPath : defaultImage;
-          avatarImg.classList.remove("hidden");
-        } else {
-          avatarImg.src = defaultImage;
-          avatarImg.classList.add("hidden");
+        const profileId = select.value; // ID du profil sélectionné
+        if (!profileId) {
+          console.error("Aucun profil sélectionné");
+          return;
         }
 
-        // ==> Mettre à jour les films affichés quand le profil change
-        C.getFilmCategory();
+        // Récupérer les profils depuis le serveur
+        const profiles = await DataProfiles.read();
+        const selectedProfile = profiles.find(
+          (profile) => profile.id == profileId
+        );
+
+        if (!selectedProfile) {
+          console.error("Profil non trouvé");
+          return;
+        }
+
+        const age = selectedProfile.age; // Âge du profil sélectionné
+        console.log("Âge du profil sélectionné :", age);
+
+        // Récupérer les catégories et appliquer le filtre d'âge
+        const categories = await DataMovie.requestCategory();
+        const html = await FilmCategory.formatMany(categories, age);
+        document.querySelector("#categories").innerHTML = html;
       };
       window.V = {};
 

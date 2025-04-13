@@ -7,22 +7,30 @@
 @import "../component/Log/style.css" layer(components);
 @import "../component/Formulaire/style.css" layer(components);
 @import "../component/FormulaireProfiles/style.css" layer(components);
+@import "../component/FormulaireProfilesChange/style.css" layer(components);
 
 body {
   background-color: var(--bg-color);
 }
 
-.Formulaires{
+.Formulaires {
   display: flex;
   flex-direction: row;
-  gap:  1rem;
+  gap: 1rem;
   width: 100%;
 }
 
-.addMovie{
+.addMovie {
   width: 55%;
 }
 
-.addProfiles{
-  width: 45%;
+.addProfiles {
+  width: 100%;
+}
+
+.profils {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: 50%;
 }
