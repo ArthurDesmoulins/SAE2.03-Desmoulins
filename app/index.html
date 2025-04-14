@@ -25,9 +25,9 @@
 
       window.C = {};
 
-      C.start = function () {
-        let profiles = DataProfiles.read();
-        V.renderNavBar("C.handlerAbout()");
+      C.start = async function () {
+        let profiles = await DataProfiles.read();
+        V.renderNavBar(profiles);
         const select = document.getElementById("profile-select");
         if (select) {
           select.value = "";
@@ -61,42 +61,28 @@
 
       C.handleProfileChange = async function () {
         const select = document.getElementById("profile-select");
-        if (!select) {
-          console.error("Élément select introuvable");
-          return;
-        }
+        const profileId = select.value;
 
-        const profileId = select.value; // ID du profil sélectionné
-        if (!profileId) {
-          console.error("Aucun profil sélectionné");
-          return;
-        }
-
-        // Récupérer les profils depuis le serveur
         const profiles = await DataProfiles.read();
-        const selectedProfile = profiles.find(
-          (profile) => profile.id == profileId
-        );
+        const selectedProfile = profiles.find((p) => p.id == profileId);
 
-        if (!selectedProfile) {
-          console.error("Profil non trouvé");
-          return;
-        }
+        if (!selectedProfile) return;
 
-        const age = selectedProfile.age; // Âge du profil sélectionné
-        console.log("Âge du profil sélectionné :", age);
+        const img = document.getElementById("profile-image");
+        img.src = "../server/photo/" + selectedProfile.image;
+        img.classList.remove("hidden");
 
-        // Récupérer les catégories et appliquer le filtre d'âge
+        const age = selectedProfile.age;
         const categories = await DataMovie.requestCategory();
         const html = await FilmCategory.formatMany(categories, age);
         document.querySelector("#categories").innerHTML = html;
       };
+
       window.V = {};
 
-      V.renderNavBar = async function (hHome) {
+      V.renderNavBar = function (profiles) {
         let header = document.querySelector("#header");
-        let profiles = await DataProfiles.read();
-        header.innerHTML = NavBar.format(hHome, profiles);
+        header.innerHTML = NavBar.format(profiles);
       };
 
       V.renderFilmInfo = function (data) {

@@ -6,7 +6,9 @@ let NavBar = {};
 NavBar.format = function (profiles) {
     let html = template;
     html = html.replace("{{profileOptions}}", NavBar.profilesOptions(profiles));
-    html = html.replace("{{initialClass}}", "hidden");
+    const defaultImage = "";
+    html = html.replace("{{imageURL}}", defaultImage);
+    html = html.replace("{{Class}}", "hidden");
     
     return html;
 };
