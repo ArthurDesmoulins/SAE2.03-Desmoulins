@@ -43,8 +43,18 @@
 
       C.handleUpdateProfilesChange = async function () {
         let form = document.querySelector(".FormulaireProfilesChange");
-        let fd = new FormData(form);
-        let res = await DataProfiles.change(fd);
+
+        let id = form.querySelector("#id").value;
+        let namechange = form.querySelector("#namechange").value;
+        let agechange = form.querySelector("#agechange").value;
+        let imagechange = form.querySelector("#imagechange").value;
+
+        let res = await DataProfiles.change(
+          id,
+          namechange,
+          agechange,
+          imagechange
+        );
         V.renderLog(res);
       };
 
@@ -52,7 +62,7 @@
         V.renderLog("Démarrage de l'application");
         V.renderAddMovie("C.handlerUpdate()");
         V.renderAddProfiles("C.handlerUpdateProfiles()");
-        V.renderChangeProfiles("C.handlerUpdateProfiles()");
+        V.renderChangeProfiles("C.handleUpdateProfilesChange()");
       };
 
       window.V = {};

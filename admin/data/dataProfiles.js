@@ -22,12 +22,12 @@ DataProfiles.add = async function(fdata){
     return data;
 }
 
-DataProfiles.change = async function(id, name, age, image) {
+DataProfiles.change = async function(id, namechange, agechange, imagechange) {
     const formData = new FormData();
     formData.append("id", id);
-    formData.append("name", name);
-    formData.append("age", age);
-    formData.append("image", image);
+    formData.append("name", namechange);
+    formData.append("age", agechange);
+    formData.append("image", imagechange);
 
     let config = {
         method: "POST",
