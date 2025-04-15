@@ -1,5 +1,5 @@
 
-let HOST_URL = "../../SAE2.03-Desmoulins";
+let HOST_URL = "..";
 let DataMovie = {};
 
  /**
