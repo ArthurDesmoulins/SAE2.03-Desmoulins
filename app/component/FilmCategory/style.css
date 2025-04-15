@@ -9,10 +9,14 @@
     text-decoration: underline var(--color-soft-purple);
 }
 
-.GridCardGenre {
+.FilmCategory__list{
     display: flex;
-  }
-  
+    flex-direction: row;
+    padding-left: 3rem;
+    height: 13rem;
+    gap: 1rem;
+}
+
 .GridCard {
     display: grid;
     grid-auto-flow: column;
@@ -23,27 +27,31 @@
     gap: 4rem;
     overflow-x: scroll;
 }
-  
+
 .GridCard::-webkit-scrollbar-track {
     background: var(--bg-color);
     border-radius: 10px;
 }
-  
+
 .GridCard::-webkit-scrollbar-thumb {
     background: var(--color-soft-purple);
     border-radius: 10px;
 }
-  
+
 .GridCard::-webkit-scrollbar {
     height: 8px;
 }
 
-.FilmCategory__list{
+.GridCardGenre {
     display: flex;
-    flex-direction: row;
-    padding-left: 3rem;
-    height: 13rem;
-    gap: 1rem;
+}
+
+.p{
+    margin-bottom: 1.5rem;
+    margin-left: 5rem;
+    font-family: Inter;
+    color: var(--color-white);
+    font-size: 2rem;
 }
 
 @media screen and (max-width: 31rem) {
@@ -56,5 +64,11 @@
         margin-bottom: 2.5rem;
         gap: 1.5rem;
         overflow-x: scroll;
+    }
+
+    .p{
+        margin-bottom: 1.5rem;
+        margin-left: 2rem;
+
     }
 }

@@ -6,6 +6,7 @@
 }
 
 .formulaire__film{
+  height: 73rem;
   margin-top: 3rem;
   padding: 2rem;
   background-color: var(--color-hard-purple);  
@@ -108,12 +109,12 @@ textarea {
 }
 
 @media screen and (max-width: 31rem) {
+
   .formulaire__film{
     margin-top: 3rem;
     padding: 2rem;
     background-color: var(--color-hard-purple);  
     border-radius: 1.5rem;
-    width: 100%;
   }
   
   .label__input {

@@ -76,7 +76,8 @@ select {
   display: none;
 }
 
-@media screen and (max-width: 31rem) {
+
+@media screen and (max-width: 43rem) {
   .navbar {
     padding: 1rem 1rem;
     flex-direction: column;
@@ -92,7 +93,6 @@ select {
   }
 
   .navbar__img {
-    width: 2rem;
     border-radius: 2rem;
     list-style: none;
   }

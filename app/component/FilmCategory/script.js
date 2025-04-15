@@ -30,7 +30,7 @@ FilmCategory.formatMany = async function (categories, age) {
     }
 
     if (html === "") {
-        html = "<p>Aucun film disponible pour votre tranche d'âge.</p>";
+        html = "<p class='p'>Aucun film disponible pour votre tranche d'âge.</p>";
     }
 
     return html;

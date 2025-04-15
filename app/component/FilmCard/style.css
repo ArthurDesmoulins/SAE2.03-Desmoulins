@@ -90,7 +90,7 @@ figure {
 
   .FilmCard__img {
     margin: 0;
-    margin-bottom: -7.3rem;
+    margin-bottom: -12rem;
     width: 12rem;
     height: 16rem;
     z-index: 5;
@@ -122,6 +122,12 @@ figure {
     border-radius: 0.1rem;
     background-color: transparent;
     color: transparent;
+  }
+
+  .FilmCard__caption:hover .FilmCard{
+    border: solid var(--color-white);
+    filter: grayscale(1) brightness(0.5);
+    transition: filter 0.15s ease-in-out;
   }
 
   .FilmCard__title {

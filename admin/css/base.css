@@ -20,8 +20,15 @@ body {
   width: 100%;
 }
 
+@media screen and (max-width: 31rem) {
+  .Formulaires {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
 .addMovie {
-  width: 55%;
+  width: 100%;
 }
 
 .addProfiles {
@@ -32,5 +39,5 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  width: 50%;
+  width: 100%;
 }

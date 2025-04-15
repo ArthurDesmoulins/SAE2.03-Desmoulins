@@ -76,13 +76,15 @@ body {
   padding-right: 30rem;
 }
 
+
+
 @media screen and (max-width: 31rem) {
   .FilmInfo__image {
-    width: 16rem;
-    height: 23rem;
+    width: 25rem;
+    height: 35rem;
     margin-left: 0;
   }
-
+  
   .FilmInfo__imagetxt {
     display: flex;
     justify-content: center;
@@ -90,7 +92,7 @@ body {
     flex-direction: column;
     margin-bottom: 5rem;
   }
-
+  
   .FilmInfo__text {
     display: flex;
     flex-direction: column;
@@ -98,15 +100,16 @@ body {
     padding-top: 5rem;
     color: var(--color-white);
   }
-
+  
   .FilmInfo__desc {
     padding-right: 3rem;
   }
 }
 
-@media screen and (max-width: 64rem) {
+@media screen and (max-width: 77rem) {
   .FilmInfo__image {
-    width: 70%;
+    width: 25rem;
+    height: 35rem;
     margin-left: 0;
   }
 
@@ -128,5 +131,12 @@ body {
 
   .FilmInfo__desc {
     padding-right: 7rem;
+  }
+}
+
+
+@media screen and (max-width: 82rem) {
+  .FilmInfo__desc {
+    padding-right: 3rem;
   }
 }
