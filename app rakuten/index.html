@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>SAE2.03 APP</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/base.css" />
+  </head>
+
+  <body>
+    <header id="header"></header>
+
+    <section id="content">
+      <div id="categories"></div>
+      <div id="cards"></div>
+    </section>
+
+    <script type="module">
+      import { NavBar } from "./component/NavBar/script.js";
+      import { FilmCard } from "./component/FilmCard/script.js";
+      import { DataMovie } from "./data/dataMovie.js";
+      import { FilmInfo } from "./component/FilmInfo/script.js";
+      import { FilmCategory } from "./component/FilmCategory/script.js";
+      import { DataProfiles } from "./data/dataProfiles.js";
+
+      window.C = {};
+
+      C.start = async function () {
+        let profiles = await DataProfiles.read();
+        V.renderNavBar(profiles);
+        const select = document.getElementById("profile-select");
+        if (select) {
+          select.value = "";
+        }
+        C.getFilmCategory();
+      };
+
+      C.handlerAbout = function () {
+        alert(
+          "Ceci est une base de projet pour la SAE2.03 édition 2025. Bonne chance !"
+        );
+      };
+
+      C.handlerFilmInfo = async function (id) {
+        let data = await DataMovie.requestFilmInfo(id);
+        V.renderFilmInfo(data[0]);
+      };
+
+      C.getMovies = async function () {
+        let data = await DataMovie.request();
+        if (data.length == 0) {
+          data = { name: "aucun film pour le moment" };
+        }
+      };
+
+      C.getFilmCategory = async function () {
+        let categories = await DataMovie.requestCategory();
+        let html = await FilmCategory.formatMany(categories);
+        V.renderFilmCategory(html);
+      };
+
+      C.handleProfileChange = async function () {
+        const select = document.getElementById("profile-select");
+        const profileId = select.value;
+
+        const profiles = await DataProfiles.read();
+        const selectedProfile = profiles.find((p) => p.id == profileId);
+
+        if (!selectedProfile) return;
+
+        const img = document.getElementById("profile-image");
+        img.src = "../server/photo/" + selectedProfile.image;
+        img.classList.remove("hidden");
+
+        const age = selectedProfile.age;
+        const categories = await DataMovie.requestCategory();
+        const html = await FilmCategory.formatMany(categories, age);
+        document.querySelector("#categories").innerHTML = html;
+      };
+
+      window.V = {};
+
+      V.renderNavBar = function (profiles) {
+        let header = document.querySelector("#header");
+        header.innerHTML = NavBar.format(profiles);
+      };
+
+      V.renderFilmInfo = function (data) {
+        if (!data) return;
+        let content = document.querySelector("#content");
+        content.innerHTML = FilmInfo.format(data);
+      };
+
+      V.renderFilmCategory = function (html) {
+        let content = document.querySelector("#categories");
+        content.innerHTML = html;
+      };
+
+      C.start();
+    </script>
+  </body>
+</html>
+<script type="module"></script>
