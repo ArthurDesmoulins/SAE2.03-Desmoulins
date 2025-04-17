@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
-
 body {
   background-color: rgb(46, 32, 59);
 }
@@ -8,7 +6,7 @@ body {
   display: flex;
   flex-direction: column-reverse;
   align-items: baseline;
-  font-family: Inter;
+  font-family: var(--font-base);
 }
 
 .FilmInfo__video {
@@ -29,7 +27,7 @@ body {
 }
 
 .FilmInfo__titre {
-  font-size: 2.5rem;
+  font-size: var(--fz-25);
   margin-top: 0.3rem;
 }
 
@@ -65,18 +63,16 @@ body {
 }
 
 .FilmInfo__genre {
-  font-weight: 200;
+  font-weight: var(--fw-2);
 }
 
 .FilmInfo__real {
-  font-weight: 100;
+  font-weight: var(--fw-1);
 }
 
 .FilmInfo__desc {
   padding-right: 30rem;
 }
-
-
 
 @media screen and (max-width: 31rem) {
   .FilmInfo__image {
@@ -84,7 +80,7 @@ body {
     height: 35rem;
     margin-left: 0;
   }
-  
+
   .FilmInfo__imagetxt {
     display: flex;
     justify-content: center;
@@ -92,7 +88,7 @@ body {
     flex-direction: column;
     margin-bottom: 5rem;
   }
-  
+
   .FilmInfo__text {
     display: flex;
     flex-direction: column;
@@ -100,7 +96,7 @@ body {
     padding-top: 5rem;
     color: var(--color-white);
   }
-  
+
   .FilmInfo__desc {
     padding-right: 3rem;
   }
@@ -133,7 +129,6 @@ body {
     padding-right: 7rem;
   }
 }
-
 
 @media screen and (max-width: 82rem) {
   .FilmInfo__desc {

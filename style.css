@@ -5,12 +5,7 @@
   flex-direction: column;
   width: 100%;
   height: 100vh;
-  background-image: linear-gradient(
-      90deg,
-      rgba(13, 13, 142, 0.4),
-      rgba(13, 13, 142, 0.4)
-    ),
-    var(--_bg-container);
+  background-color: rgba(13, 13, 142, 0.4);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -121,4 +116,34 @@
 
 .lien {
   text-decoration: none;
+}
+
+@media screen and (max-width: 31rem) {
+  body {
+    width: 100%;
+  }
+
+  .container {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .card {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 2rem;
+    width: 12rem;
+    height: 9rem;
+  }
+
+  .nav {
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
 }

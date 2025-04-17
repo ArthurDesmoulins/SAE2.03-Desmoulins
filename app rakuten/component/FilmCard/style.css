@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
 body {
   background-color: var(--bg-color);
 }
@@ -10,8 +8,8 @@ figure {
 
 .FilmCard {
   width: 9rem;
-  font-family: Inter;
-  color: rgb(235, 235, 235);
+  font-family: var(--font-base);
+  color: var(--color-near-white);
 }
 
 .FilmCard__figure {
@@ -50,7 +48,7 @@ figure {
 
 .FilmCard__title {
   margin: 0;
-  font-size: 1rem;
+  font-size: var(--fz-1);
 }
 
 @media screen and (min-width: 31rem) {
@@ -75,7 +73,7 @@ figure {
   }
 
   .GridCard::-webkit-scrollbar {
-    height: 8px;
+    height: 0.5rem;
   }
 
   .FilmCard {
@@ -124,7 +122,7 @@ figure {
     color: transparent;
   }
 
-  .FilmCard__caption:hover .FilmCard{
+  .FilmCard__caption:hover .FilmCard {
     border: solid var(--color-white);
     filter: grayscale(1) brightness(0.5);
     transition: filter 0.15s ease-in-out;
@@ -132,6 +130,6 @@ figure {
 
   .FilmCard__title {
     margin: 0;
-    font-size: 2rem;
+    font-size: var(--fz-2);
   }
 }
