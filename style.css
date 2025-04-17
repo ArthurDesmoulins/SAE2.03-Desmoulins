@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(
+      90deg,
+      rgba(13, 13, 142, 0.4),
+      rgba(13, 13, 142, 0.4)
+    ),
+    var(--_bg-container);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-family: Inter;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  padding: 3rem;
+  background-color: black;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  width: 15rem;
+}
+
+.nav__img {
+  display: flex;
+  justify-content: end;
+  flex-direction: row;
+  width: 100%;
+}
+
+.uni {
+  height: 6rem;
+  margin-right: 1rem;
+  border-radius: 0.5rem;
+}
+
+.iut {
+  height: 6rem;
+  margin-right: 1rem;
+  border-radius: 0.5rem;
+}
+
+.mmi {
+  height: 6rem;
+  border-radius: 0.5rem;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  color: black;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 25rem;
+  height: 23rem;
+  padding: 5rem;
+  margin-right: 3rem;
+  background-color: #fff;
+  border: solid #888888;
+  border-radius: 2rem;
+}
+
+.card:hover {
+  transform: translateY(-0.5rem);
+  transition: transform 0.5s;
+  border: solid #242424;
+}
+
+.title2 {
+  margin-bottom: 1rem;
+}
+
+.desc {
+  margin-bottom: 2rem;
+  color: rgba(122, 122, 122, 0.7);
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 3.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  background-color: blue;
+  color: rgb(255, 255, 255);
+  border-radius: 2rem;
+  border: none;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: rgb(0, 0, 168);
+}
+
+.button:active {
+  background-color: rgb(0, 0, 105);
+}
+
+.lien {
+  text-decoration: none;
+}
