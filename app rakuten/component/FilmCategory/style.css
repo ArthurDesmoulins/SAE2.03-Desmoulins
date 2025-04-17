@@ -90,8 +90,24 @@
     overflow-x: scroll;
   }
 
+  .GridCard::-webkit-scrollbar-track {
+    display: none;
+  }
+
+  .GridCard::-webkit-scrollbar-thumb {
+    display: none;
+  }
+
+  .GridCard::-webkit-scrollbar {
+    display: none;
+  }
+
   .p {
     margin-bottom: 1.5rem;
     margin-left: 2rem;
+  }
+
+  .carousel-btn {
+    display: none;
   }
 }

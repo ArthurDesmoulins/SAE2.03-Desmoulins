@@ -10,7 +10,8 @@
   <body>
     <header class="header" id="header"></header>
 
-    <section id="content">
+    <section class="content" id="content">
+      <div id="info" class="info"></div>
       <div id="categories"></div>
       <div id="cards"></div>
     </section>
@@ -87,8 +88,32 @@
 
       V.renderFilmInfo = function (data) {
         if (!data) return;
-        let content = document.querySelector("#content");
+
+        let content = document.querySelector("#info");
+        let categories = document.querySelector("#categories");
+        let cards = document.querySelector("#cards");
+
         content.innerHTML = FilmInfo.format(data);
+
+        categories.style.display = "none";
+        cards.style.display = "none";
+
+        content.scrollIntoView({ behavior: "smooth" });
+
+        document.body.style.overflow = "hidden";
+      };
+
+      V.clearFilmInfo = function () {
+        let content = document.querySelector("#info");
+        let categories = document.querySelector("#categories");
+        let cards = document.querySelector("#cards");
+
+        content.innerHTML = "";
+
+        categories.style.display = "block";
+        cards.style.display = "block";
+
+        document.body.style.overflow = "auto";
       };
 
       V.renderFilmCategory = function (html) {

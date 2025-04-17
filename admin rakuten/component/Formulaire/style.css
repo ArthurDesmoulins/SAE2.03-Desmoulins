@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+.formulaire {
+  font-family: var(--font-base);
+  color: var(--color-white);
+}
+
+.formulaire__film {
+  height: 73rem;
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: var(--color-gray-verydark);
+  border-radius: 1.5rem;
+}
+
+.formulaire__title {
+  font-size: 2rem;
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+
+.formulaire__info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 1.5rem;
+}
+
+.label__input {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2rem;
+  margin-bottom: 1.5rem;
+  width: 25%;
+}
+
+input {
+  background-color: var(--color-gray-dark);
+  color: var(--color-white);
+  border: none;
+  border-radius: 2rem;
+  height: 2rem;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+}
+
+select {
+  background-color: var(--color-gray-dark);
+  color: var(--color-white);
+  border: none;
+  border-radius: 2rem;
+  height: 2.5rem;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+}
+
+textarea {
+  background-color: var(--color-gray-dark);
+  color: var(--color-white);
+  border: none;
+  border-radius: 2rem;
+  height: 2rem;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+}
+
+.formulaire__desc {
+  width: 350%;
+  height: 10rem;
+}
+
+.formulaire__fichier {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-left: 1.5rem;
+}
+
+.label__input2 {
+  display: flex;
+  flex-direction: column;
+  margin-right: 2rem;
+  margin-bottom: 1.5rem;
+  width: 75%;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin-left: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 5rem;
+  height: 3rem;
+  color: var(--color-soft-purple);
+  font-size: 1rem;
+  background-color: var(--color-white);
+}
+
+.button:hover {
+  color: var(--color-white);
+  background-color: var(--color-gray-dark);
+}
+
+.button:active {
+  color: var(--color-white);
+  background-color: var(--color-gray-verydark);
+}
+
+@media screen and (max-width: 31rem) {
+  .formulaire__film {
+    margin-top: 3rem;
+    padding: 2rem;
+    background-color: var(--color-gray-dark);
+    border-radius: 1.5rem;
+  }
+
+  .label__input {
+    width: 95%;
+  }
+
+  .label__input2 {
+    width: 98%;
+  }
+
+  .formulaire__desc {
+    width: 18rem;
+  }
+}

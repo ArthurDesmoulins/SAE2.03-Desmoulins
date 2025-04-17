@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>SAE2.03 ADMIN</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/base.css" />
+  </head>
+  <body>
+    <img class="img" src="../server/images/logo.svg" alt="rien" />
+    <section id="log"></section>
+    <div class="Formulaires">
+      <section class="addMovie" id="addMovie"></section>
+      <div class="profils">
+        <section class="addProfiles" id="addProfiles"></section>
+        <section class="changeProfiles" id="changeProfiles"></section>
+      </div>
+    </div>
+
+    <script type="module">
+      import { Log } from "./component/Log/script.js";
+      import { Formulaire } from "./component/Formulaire/script.js";
+      import { FormulaireProfiles } from "./component/FormulaireProfiles/script.js";
+      import { FormulaireProfilesChange } from "./component/FormulaireProfilesChange/script.js";
+
+      import { DataMovie } from "./data/dataMovie.js";
+      import { DataProfiles } from "./data/dataProfiles.js";
+
+      window.C = {};
+
+      C.handlerUpdate = async function () {
+        let form = document.querySelector(".formulaire");
+        let fd = new FormData(form);
+        let res = await DataMovie.add(fd);
+        V.renderLog(res);
+      };
+
+      C.handlerUpdateProfiles = async function () {
+        let form = document.querySelector(".FormulaireProfiles");
+        let fd = new FormData(form);
+        let res = await DataProfiles.add(fd);
+        V.renderLog(res);
+      };
+
+      C.handleUpdateProfilesChange = async function () {
+        let form = document.querySelector(".FormulaireProfilesChange");
+
+        let id = form.querySelector("#id").value;
+        let namechange = form.querySelector("#namechange").value;
+        let agechange = form.querySelector("#agechange").value;
+        let imagechange = form.querySelector("#imagechange").value;
+
+        let res = await DataProfiles.change(
+          id,
+          namechange,
+          agechange,
+          imagechange
+        );
+        V.renderLog(res);
+      };
+
+      C.start = function () {
+        V.renderLog("Démarrage de l'application");
+        V.renderAddMovie("C.handlerUpdate()");
+        V.renderAddProfiles("C.handlerUpdateProfiles()");
+        V.renderChangeProfiles("C.handleUpdateProfilesChange()");
+      };
+
+      window.V = {};
+
+      V.renderLog = function (txt) {
+        let content = document.querySelector("#log");
+        content.innerHTML = Log.format(txt);
+      };
+
+      V.renderAddMovie = function (handler) {
+        let content = document.querySelector("#addMovie");
+        content.innerHTML = Formulaire.format(handler);
+      };
+
+      V.renderAddProfiles = function (handler) {
+        let content = document.querySelector("#addProfiles");
+        content.innerHTML = FormulaireProfiles.format(handler);
+      };
+
+      V.renderChangeProfiles = function (handler) {
+        let content = document.querySelector("#changeProfiles");
+        content.innerHTML = FormulaireProfilesChange.format(handler);
+      };
+
+      C.start();
+    </script>
+  </body>
+</html>

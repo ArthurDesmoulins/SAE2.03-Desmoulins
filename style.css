@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background-color: rgba(13, 13, 142, 0.4);
   background-position: center;
   background-size: cover;
@@ -17,6 +17,7 @@
   display: flex;
   flex-direction: row;
   padding: 3rem;
+  margin-bottom: 2rem;
   background-color: black;
 }
 
@@ -55,6 +56,7 @@
 
 .cards {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -71,6 +73,7 @@
   height: 23rem;
   padding: 5rem;
   margin-right: 3rem;
+  margin-bottom: 3rem;
   background-color: #fff;
   border: solid #888888;
   border-radius: 2rem;
@@ -116,6 +119,16 @@
 
 .lien {
   text-decoration: none;
+}
+
+.rakuten {
+  display: flex;
+  flex-direction: row;
+}
+
+.normal {
+  display: flex;
+  flex-direction: row;
 }
 
 @media screen and (max-width: 31rem) {

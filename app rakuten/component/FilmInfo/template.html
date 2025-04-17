@@ -1,27 +1,34 @@
 <div class="FilmInfo">
+  <div class="FilmInfo_cross">
+    <button onclick="window.V.clearFilmInfo()" class="FilmInfo__close">
+      ✖
+    </button>
+  </div>
+
   <iframe
     class="FilmInfo__video"
-    id="inlineFrameExample"
     width="100%"
     height="200"
     src="{{video}}"
+    allowfullscreen
   ></iframe>
-  <div class="FilmInfo__imagetxt">
-    <img
-      class="FilmInfo__image"
-      src="https://mmi.unilim.fr/~desmoulins9/SAE2.03-Desmoulins/server/images/{{image}}"
-      alt="rien"
-    />
+
+  <h1 class="FilmInfo__titre">{{titre}}</h1>
+  <div class="FilmInfo__content">
     <div class="FilmInfo__text">
-      <p class="FilmInfo__real">Réalisateur: {{real}}</p>
-      <h1 class="FilmInfo__titre">{{titre}}</h1>
-      <div class="FilmInfo__text-info">
-        <p class="FilmInfo__age">{{age}}+</p>
-        <p class="FilmInfo__date">{{date}}</p>
-        <p class="FilmInfo__time">{{time}}min</p>
-        <p class="FilmInfo__genre">{{genre}}</p>
+      <div class="FilmInfo__desc-genre">
+        <p class="FilmInfo__desc">{{desc}}</p>
+        <span class="FilmInfo__genre">{{genre}}</span>
       </div>
-      <p class="FilmInfo__desc">{{desc}}</p>
+      <div class="FilmInfo__badges">
+        <span class="FilmInfo__meta">{{date}}</span>
+        <span class="FilmInfo__meta">{{time}} min</span>
+        <span class="FilmInfo__badge">{{age}}+</span>
+      </div>
     </div>
+    <p class="FilmInfo__real">
+      Directeur : <br />
+      {{real}}
+    </p>
   </div>
 </div>

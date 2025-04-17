@@ -1,0 +1,52 @@
+<form class="FormulaireProfilesChange">
+  <div class="FormulaireProfilesChange__profiles">
+    <h1 class="FormulaireProfilesChange__title">Modifier un profil</h1>
+    <div class="FormulaireProfilesChange__label-input">
+      <label for="duree">Id du profil à modifier</label>
+      <input
+        name="id"
+        type="text"
+        id="id"
+        class="FormulaireProfilesChange__id"
+        required
+      />
+    </div>
+    <div class="FormulaireProfilesChange__label-input">
+      <label for="duree">Nom modifié</label>
+      <input
+        name="namechange"
+        type="text"
+        id="namechange"
+        class="FormulaireProfilesChange__name"
+        required
+      />
+    </div>
+    <div class="FormulaireProfilesChange__label-input">
+      <label for="duree">Url de la photo modifié</label>
+      <input
+        name="imagechange"
+        type="text"
+        id="imagechange"
+        class="FormulaireProfilesChange__image"
+        required
+      />
+    </div>
+    <div class="FormulaireProfilesChange__label-input">
+      <label for="duree">Age modifié</label>
+      <input
+        name="agechange"
+        type="text"
+        id="agechange"
+        class="formulaire__age"
+        required
+      />
+    </div>
+    <input
+      class="FormulaireProfilesChange__button"
+      onclick="{{handle}}"
+      type="button"
+      value="Modifier le profil"
+      name="todo"
+    />
+  </div>
+</form>
