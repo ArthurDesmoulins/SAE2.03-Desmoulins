@@ -116,3 +116,32 @@
         return $profiles;
     }
 
+function addFavoriteController() {
+    $id_profile = $_REQUEST['id_profile'];
+    $id_movie = $_REQUEST['id_movie'];
+
+    if (!$id_profile || !$id_movie) {
+        return "Identifiants manquants";
+    }
+
+    if (isMovieInFavorites($id_profile, $id_movie)) {
+        return "Le film est déjà dans vos favoris.";
+    }
+
+    $ok = addFavorite($id_profile, $id_movie);
+
+    if ($ok != 0) {
+        return "Le film a été ajouté à vos favoris.";
+    } else {
+        return "Erreur lors de l'ajout aux favoris.";
+    }
+}
+
+function getFavoritesController() {
+    $id_profile = $_REQUEST['id_profile'];
+    if (!$id_profile) {
+        return "Identifiant du profil manquant";
+    }
+    return getFavorites($id_profile);
+}
+

@@ -82,7 +82,15 @@ if ( isset($_REQUEST['todo']) ){
 
     case 'readfilmcategory':
       $data = readFilmCategoryController();
-      break; //modifier cette fonction avec ce que fait la fonction ci-dessous et donc supprimer la fonction ci-dessous
+      break; 
+
+    case 'addfavorite':
+      $data = addFavoriteController();
+      break;
+
+    case 'getfavorites':
+      $data = getFavoritesController();
+      break;
 
     default: // il y a un paramètre todo mais sa valeur n'est pas reconnue/supportée
       echo json_encode('[error] Unknown todo value');
