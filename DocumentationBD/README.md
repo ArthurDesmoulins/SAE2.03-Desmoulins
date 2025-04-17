@@ -23,10 +23,11 @@ AND Movie.min_age <= :age"
 
 Pour l'ittération 8 on doit modifier les profils existants avec une formule comme celle-ci: "UPDATE Profiles SET name=:name, image=:image, age=:age WHERE id=:id".
 
-Début de l'ittération 9: on créé uune nouvelle table pour pouvoir gérer les films mis en favorits. On créer ensuite trois fonction pour
+Début de l'ittération 9: on créé une nouvelle table pour pouvoir gérer les films mis en favorits. On créer ensuite trois fonction pour
 ajouter un favoris: "INSERT IGNORE INTO Favorites (id_profile, id_movie) VALUES (:id_profile, :id_movie)",
 récuperer tous les favoris: "SELECT Movie.\* FROM Movie
 JOIN Favorites ON Movie.id = Favorites.id_movie
 WHERE Favorites.id_profile = :id_profile"
 et vérifier si un film est déjà dans les favoris d’un profil utilisateur:
 "SELECT COUNT(\*) FROM Favorites WHERE id_profile = :id_profile AND id_movie = :id_movie"
+Dans cette table on met en parametre l'id_profile et l'id_movie afin d'associer chaque film mis en favorits avec el profil qui l'a mis et pas avoir des favorits commun pour tous les profils.
