@@ -2,7 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 :root {
   /* Primitive Tokens */
-  --color-black: hsl(253, 69%, 8%);
+  --color-black: hsl(0, 0%, 0%);
+  --color-hover: hsla(0, 0%, 100%, 0.247);
   --color-white: hsl(0, 0%, 100%);
   --color-near-white: hsl(0, 0%, 90%);
   --color-gray-light: hsl(0, 0%, 80%);
@@ -18,7 +19,7 @@
   --color-fg: var(--color-white);
   --color-bg: var(--color-gray-dark);
 
-  --font-base: "Inter", sans-serif;
+  --font-base: "Roboto", sans-serif;
 
   --fz-1: 1rem;
   --fz-15: 1.5rem;

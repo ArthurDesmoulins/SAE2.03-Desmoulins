@@ -9,6 +9,12 @@
 @import "../component/FilmInfo/style.css" layer(components);
 @import "../component/FilmCategory/style.css" layer(components);
 
-body{
-    background-color: rgb(46, 32, 59);
+body {
+  background-color: var(--color-black);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }

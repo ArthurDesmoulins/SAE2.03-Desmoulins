@@ -1,4 +1,15 @@
 <section class="FilmCategory">
   <h2 class="FilmCategory__title">{{category}}</h2>
-  <div class="GridCard">{{movies}}</div>
+
+  <div class="FilmCategory__carousel-container">
+    <button class="carousel-btn left" onclick="scrollCarousel(this, 'left')">
+      &#10094;
+    </button>
+
+    <div class="GridCard">{{movies}}</div>
+
+    <button class="carousel-btn right" onclick="scrollCarousel(this, 'right')">
+      &#10095;
+    </button>
+  </div>
 </section>

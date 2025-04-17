@@ -36,5 +36,17 @@ FilmCategory.formatMany = async function (categories, age) {
     return html;
 };
 
+window.scrollCarousel = function (btn, direction) {
+  const container = btn.closest(".FilmCategory__carousel-container");
+  const grid = container.querySelector(".GridCard");
+  const scrollAmount = 200;
+
+  if (direction === "left") {
+    grid.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+  } else {
+    grid.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  }
+};
+
 
 export { FilmCategory };

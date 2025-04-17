@@ -24,31 +24,11 @@ figure {
   width: 9rem;
   height: 12rem;
   z-index: 5;
-  border-radius: 0.3rem;
-  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
-  mask-image: linear-gradient(to bottom, black 0%, transparent 100%);
 }
 
 .FilmCard__img:active {
   filter: grayscale(1) brightness(0.3);
   transition: filter 0.15s ease-in-out;
-}
-
-.FilmCard__caption {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  z-index: 10;
-  border-radius: 0.1rem;
-}
-
-.FilmCard__title {
-  margin: 0;
-  font-size: var(--fz-1);
 }
 
 @media screen and (min-width: 31rem) {
@@ -57,9 +37,10 @@ figure {
     grid-auto-flow: column;
     grid-template-columns: repeat(auto-fill, 12rem);
     padding-left: 3rem;
-    height: 17.5rem;
-    gap: 1rem;
+    height: 19rem;
+    gap: 0.25rem;
     overflow-x: scroll;
+    overflow-y: visible;
   }
 
   .GridCard::-webkit-scrollbar-track {
@@ -77,9 +58,18 @@ figure {
   }
 
   .FilmCard {
-    width: 12rem;
+    position: relative;
+    width: 13rem;
+    padding-top: 0.5rem;
     font-family: Inter;
     color: var(--color-white);
+    z-index: 30;
+  }
+
+  .FilmCard:hover {
+    translate: 0 -0.5rem;
+    transition: ease-in-out 0.15s;
+    z-index: 50;
   }
 
   .FilmCard__figure {
@@ -92,44 +82,8 @@ figure {
     width: 12rem;
     height: 16rem;
     z-index: 5;
-    border-radius: 0.3rem;
     background: none;
     mask-image: linear-gradient(to bottom, black 0%, black 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 0%, black 100%);
-  }
-
-  .FilmCard__img:hover {
-    border: solid var(--color-white);
-    filter: grayscale(1) brightness(0.5);
-    transition: filter 0.15s ease-in-out;
-  }
-
-  .FilmCard:hover .FilmCard__caption {
-    color: var(--color-white);
-    transition: 0.2s ease-in-out;
-  }
-
-  .FilmCard__caption {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    z-index: 10;
-    border-radius: 0.1rem;
-    background-color: transparent;
-    color: transparent;
-  }
-
-  .FilmCard__caption:hover .FilmCard {
-    border: solid var(--color-white);
-    filter: grayscale(1) brightness(0.5);
-    transition: filter 0.15s ease-in-out;
-  }
-
-  .FilmCard__title {
-    margin: 0;
-    font-size: var(--fz-2);
   }
 }
